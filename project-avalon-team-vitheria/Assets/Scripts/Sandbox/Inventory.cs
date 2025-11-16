@@ -6,33 +6,27 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public static Inventory Singleton;
-    public static InventoryItem carriedItem;
-    [SerializeField] InventoryItem itemPrefab;
+    public InventorySlot[] Slots;
+    public GameObject inventoryItemPrefab;
 
-    [Header("Item List")]
-    [SerializeField] Item[] items;
     void Awake()
     {
         Singleton = this;
     }
 
-    void Update()
+    public void AddItem(Item item)
     {
-        if(carriedItem == null) return;
-
-        carriedItem.transform.position = Input.mousePosition;
-    }
-
-    public void SetCarriedItem(InventoryItem item)
-    {
-        if(carriedItem != null)
+        for(int i = 0; i < Slots.Length; i++)
         {
-            if(item.activeSlot != carriedItem.myItem) return;
-            item.activeSlot.SetItem(carriedItem);
+            InventorySlot slot = Slots[i];
+            InventoryItem iteminSlot = slot.GetComponentInChildren<InventoryItem>();
+            if(iteminSlot == null)
+            {
+                GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
+                InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
+                inventoryItem.Initialize(item);
+                return;
+            }
         }
-
-        carriedItem = item;
-        carriedItem.canvasGroup.blocksRaycasts = false;
-        item.transform.SetParent(draggablesTransform);
     }
 }

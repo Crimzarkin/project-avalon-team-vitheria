@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuildSystem : MonoBehaviour
 {
     public Transform shootingPoint;
-    public GameObject blockObject;
+    public GameObject blockObject = null;
 
     public Transform parent;
 
@@ -18,7 +18,7 @@ public class BuildSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && blockObject != null)
         {
             BuildBlock(blockObject);
         }
