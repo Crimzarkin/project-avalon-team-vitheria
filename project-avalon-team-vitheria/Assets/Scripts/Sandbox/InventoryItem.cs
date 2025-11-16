@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour
 {
     public Item myItem;
-    Image itemIcon;
+    public Image itemIcon;
 
     public void Initialize(Item item)
     {

@@ -94,4 +94,9 @@ public class BuildSystem : MonoBehaviour
             }
         }
     }
+
+    public void changeBlock(GameObject block)
+    {
+        blockObject = block;
+    }
 }

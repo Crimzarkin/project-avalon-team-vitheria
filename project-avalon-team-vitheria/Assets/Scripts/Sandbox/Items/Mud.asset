@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Mud
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 9d53eb8965dbd2b409ca30286783ef1c, type: 3}
+  itemPrefab: {fileID: 219725917274201479, guid: 301b22a070244b84899cf85493494f1b,
+    type: 3}

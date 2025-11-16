@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Driftwood
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 5db2002875a43bb4cba24284ae0e0ce3, type: 3}
+  itemPrefab: {fileID: 8226634073544214719, guid: 24d1d97e25f23bb4787dff5035757c5d,
+    type: 3}

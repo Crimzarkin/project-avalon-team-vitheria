@@ -7,11 +7,11 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Singleton;
     public InventorySlot[] Slots;
-    public GameObject inventoryItemPrefab;
 
-    void Awake()
+    public void Start()
     {
         Singleton = this;
+        Slots = GetComponentsInChildren<InventorySlot>();
     }
 
     public void AddItem(Item item)
@@ -22,9 +22,7 @@ public class Inventory : MonoBehaviour
             InventoryItem iteminSlot = slot.GetComponentInChildren<InventoryItem>();
             if(iteminSlot == null)
             {
-                GameObject newItem = Instantiate(inventoryItemPrefab, slot.transform);
-                InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
-                inventoryItem.Initialize(item);
+                //Add item to an available slot
                 return;
             }
         }

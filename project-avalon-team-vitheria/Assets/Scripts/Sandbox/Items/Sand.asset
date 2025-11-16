@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Sand
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c45815250bc56fd43944712b7cdc2949, type: 3}
+  itemPrefab: {fileID: 8160104964669453984, guid: 6aeab3fffb57fde41bb5712cd09652a8,
+    type: 3}
