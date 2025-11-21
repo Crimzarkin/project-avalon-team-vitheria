@@ -5,4 +5,5 @@ using UnityEngine;
 public class SeedItem : MonoBehaviour
 {
     public Material seedMaterial;
+    public GameObject plantPrefab;
 }

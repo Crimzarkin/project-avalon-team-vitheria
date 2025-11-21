@@ -102,7 +102,16 @@ public class GrabObject : MonoBehaviour
         heldObject.transform.localPosition = Vector3.zero;
         heldObject.transform.localRotation = Quaternion.identity;
 
-        // Scale down to half
+        // Disable collider and make kinematic to avoid physics issues with raycasts
+        /*heldObjectCollider = heldObject.GetComponent<Collider>();
+        heldObjectRigidbody = heldObject.GetComponent<Rigidbody>();
+        if (heldObjectCollider != null)
+            heldObjectCollider.enabled = false;
+        if (heldObjectRigidbody != null)
+            heldObjectRigidbody.isKinematic = true;*/
+
+
+        // Scale down to 40% of original size
         heldObject.transform.localScale = target.transform.localScale * 0.4f;
 
         // Restore original material if highlighted
@@ -117,6 +126,7 @@ public class GrabObject : MonoBehaviour
 
     void AttemptDrop()
     {
+        //Drop the held object once utilized
         if (heldObject != null)
         {
             heldObject.transform.SetParent(null);
