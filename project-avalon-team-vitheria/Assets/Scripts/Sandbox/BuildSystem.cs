@@ -9,7 +9,7 @@ public class BuildSystem : MonoBehaviour
 
     public Transform parent;
 
-    public Color normalColor;
+    private Color lastColor;
     public Color highlightedColor;
 
     GameObject lastHightlightedBlock;
@@ -50,23 +50,24 @@ public class BuildSystem : MonoBehaviour
     {
         if(Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength) && ZoneObject)
         {
+            Vector3 spawnPosition;
 
             if(hitInfo.transform.tag == "Block") //Tag to check if we hit a 'block' object
             {
-                Vector3 spawnPosition = new Vector3(Mathf.RoundToInt(hitInfo.point.x + hitInfo.normal.x/2), Mathf.RoundToInt(hitInfo.point.y + hitInfo.normal.y / 2), Mathf.RoundToInt(hitInfo.point.z + hitInfo.normal.z /2));
-                Instantiate(block, spawnPosition, Quaternion.identity, parent);
+                spawnPosition = new Vector3(Mathf.RoundToInt(hitInfo.point.x + hitInfo.normal.x/2), Mathf.RoundToInt(hitInfo.point.y + hitInfo.normal.y / 2), Mathf.RoundToInt(hitInfo.point.z + hitInfo.normal.z /2));
             }
             else
             {
-                Vector3 spawnPosition = new Vector3(Mathf.RoundToInt(hitInfo.point.x), Mathf.RoundToInt(hitInfo.point.y), Mathf.RoundToInt(hitInfo.point.z));
-                Instantiate(block, spawnPosition, Quaternion.identity, parent);
+                spawnPosition = new Vector3(Mathf.RoundToInt(hitInfo.point.x), Mathf.RoundToInt(hitInfo.point.y), Mathf.RoundToInt(hitInfo.point.z));
             }
+
+            GameObject newBlock = Instantiate(block, spawnPosition, Quaternion.identity, parent);
         }
     }
 
     void DestroyBlock()
     {
-        if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo))
+        if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
         {
             if (hitInfo.transform.tag == "Block") //Another tag check
             {
@@ -74,21 +75,22 @@ public class BuildSystem : MonoBehaviour
             }
         }
     }
-
     void HighlightBlock()
     {
-        if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo))
+        if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
         {
             if (hitInfo.transform.tag == "Block") //Another tag check
             {
                 if(lastHightlightedBlock == null)
                 {
                     lastHightlightedBlock = hitInfo.transform.gameObject;
+                    lastColor = hitInfo.transform.gameObject.GetComponent<Renderer>().material.color;
                     hitInfo.transform.gameObject.GetComponent<Renderer>().material.color = highlightedColor;
                 }
                 else if (lastHightlightedBlock != hitInfo.transform.gameObject)
                 {
-                    lastHightlightedBlock.GetComponent<Renderer>().material.color = normalColor;
+                    lastHightlightedBlock.GetComponent<Renderer>().material.color = lastColor;
+                    lastColor = hitInfo.transform.gameObject.GetComponent<Renderer>().material.color;
                     hitInfo.transform.gameObject.GetComponent<Renderer>().material.color = highlightedColor;
                     lastHightlightedBlock = hitInfo.transform.gameObject;
                 }
