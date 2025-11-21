@@ -15,6 +15,7 @@ public class BuildSystem : MonoBehaviour
     GameObject lastHightlightedBlock;
 
     public bool ZoneObject = false;
+    private float RaycastLength = 5.0f;
 
     private void Update()
     {
@@ -47,7 +48,7 @@ public class BuildSystem : MonoBehaviour
 
     void BuildBlock(GameObject block)
     {
-        if(Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo) && ZoneObject)
+        if(Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength) && ZoneObject)
         {
 
             if(hitInfo.transform.tag == "Block") //Tag to check if we hit a 'block' object
