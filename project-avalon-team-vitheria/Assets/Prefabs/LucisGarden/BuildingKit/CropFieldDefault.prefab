@@ -111,7 +111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7628309873884807763
 Transform:
   m_ObjectHideFlags: 0
@@ -534,10 +534,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSoiled: 0
   hasSeed: 0
+  isWatered: 0
   seedRenderer: {fileID: 8498426938499321217}
   RedPhotinia: {fileID: 4293532503509019650}
   MapleBush: {fileID: 8095355207963846284}
   ArabianJasmine: {fileID: 9172680165183247388}
+  WaterObject: {fileID: 781198505907289197, guid: 216b84972c8c025498f885912531fd66,
+    type: 3}
 --- !u!1 &8034849428339725121
 GameObject:
   m_ObjectHideFlags: 0

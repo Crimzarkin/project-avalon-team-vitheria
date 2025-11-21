@@ -72,9 +72,18 @@ public class GrabObject : MonoBehaviour
 
                         // SEEDS
                         SeedItem seed = heldObject.GetComponent<SeedItem>();
-                        if (seed != null && plot.isSoiled)
+                        if (seed != null && plot.isSoiled && !plot.hasSeed)
                         {
                             plot.PlantSeed(seed.seedMaterial);
+                            AttemptDrop();
+                            return;
+                        }
+
+                        // WATER
+                        WaterItem water = heldObject.GetComponent<WaterItem>();
+                        if( water != null && plot.isSoiled && !plot.hasSeed && !plot.isWatered)
+                        {
+                            plot.WaterPlot();
                             AttemptDrop();
                             return;
                         }

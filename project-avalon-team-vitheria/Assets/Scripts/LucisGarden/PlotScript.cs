@@ -12,7 +12,9 @@ public class PlotScript : MonoBehaviour
     public GameObject RedPhotinia;
     public GameObject MapleBush;
     public GameObject ArabianJasmine;
+    public GameObject WaterObject;
     private Material plantedSeedMaterial;
+    private bool isIrrigated = false;
 
     void Start()
     {
@@ -90,5 +92,18 @@ public class PlotScript : MonoBehaviour
         }
         plant.transform.localScale = targetScale; //final scale is exact
     }
+
+    public void WaterPlot()
+    {
+        if (isIrrigated) return;
+
+        isIrrigated = true;
+
+        if (WaterObject != null)
+            WaterObject.SetActive(true);
+
+        Debug.Log("Plot watered!");
+    }
+
 }
 
