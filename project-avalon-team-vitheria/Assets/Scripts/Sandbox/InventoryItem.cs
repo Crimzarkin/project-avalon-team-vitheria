@@ -7,11 +7,14 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour
 {
     public Item myItem;
-    public Image itemIcon;
 
+    public void Start()
+    {
+        this.gameObject.AddComponent<Image>();
+        this.gameObject.GetComponent<Image>().sprite = myItem.sprite;
+    }
     public void Initialize(Item item)
     {
         myItem = item;
-        itemIcon.sprite = item.sprite;
     }
 }

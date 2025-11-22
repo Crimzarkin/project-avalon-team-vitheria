@@ -7,6 +7,8 @@ public class BuildSystem : MonoBehaviour
     public Transform shootingPoint;
     public GameObject blockObject = null;
 
+    public bool inventoryClosed = true;
+
     public Transform parent;
 
     private Color lastColor;
@@ -19,11 +21,11 @@ public class BuildSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && blockObject != null)
+        if (Input.GetMouseButtonDown(0) && blockObject != null && inventoryClosed)
         {
             BuildBlock(blockObject);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && inventoryClosed)
         {
             DestroyBlock();
         }
@@ -52,13 +54,22 @@ public class BuildSystem : MonoBehaviour
         {
             Vector3 spawnPosition;
 
-            if(hitInfo.transform.tag == "Block") //Tag to check if we hit a 'block' object
+            if(hitInfo.transform.CompareTag("Block")) //Tag to check if we hit a 'block' object
             {
-                spawnPosition = new Vector3(Mathf.RoundToInt(hitInfo.point.x + hitInfo.normal.x/2), Mathf.RoundToInt(hitInfo.point.y + hitInfo.normal.y / 2), Mathf.RoundToInt(hitInfo.point.z + hitInfo.normal.z /2));
+                spawnPosition = hitInfo.point + hitInfo.normal * 0.5f; // Cleaner offset calculation
+                spawnPosition = new Vector3(
+                    Mathf.RoundToInt(spawnPosition.x),
+                    Mathf.RoundToInt(spawnPosition.y),
+                    Mathf.RoundToInt(spawnPosition.z)
+                );
             }
             else
             {
-                spawnPosition = new Vector3(Mathf.RoundToInt(hitInfo.point.x), Mathf.RoundToInt(hitInfo.point.y), Mathf.RoundToInt(hitInfo.point.z));
+                spawnPosition = new Vector3(
+                    Mathf.RoundToInt(hitInfo.point.x), 
+                    Mathf.RoundToInt(hitInfo.point.y), 
+                    Mathf.RoundToInt(hitInfo.point.z)
+                );
             }
 
             GameObject newBlock = Instantiate(block, spawnPosition, Quaternion.identity, parent);
@@ -69,7 +80,7 @@ public class BuildSystem : MonoBehaviour
     {
         if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
         {
-            if (hitInfo.transform.tag == "Block") //Another tag check
+            if (hitInfo.transform.CompareTag("Block")) //Another tag check
             {
                 Destroy(hitInfo.transform.gameObject);
             }
@@ -79,7 +90,7 @@ public class BuildSystem : MonoBehaviour
     {
         if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
         {
-            if (hitInfo.transform.tag == "Block") //Another tag check
+            if (hitInfo.transform.CompareTag("Block")) //Another tag check
             {
                 if(lastHightlightedBlock == null)
                 {
