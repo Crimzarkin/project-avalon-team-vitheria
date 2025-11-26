@@ -3,9 +3,20 @@ using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 3.0f;
+    public float moveSpeed = 2.0f;
+    public float snapTurnAngle = 45f;
 
     private InputDevice controller;
+
+    private bool triggerPressed = false;
+
+    // Touchpad axis
+    private Vector2 axis;
+    private bool leftSwipe = false;
+    private bool rightSwipe = false;
+
+    // Swipe Detection Threshold
+    public float swipeThreshold = 0.6f;
 
     void Start()
     {
@@ -14,20 +25,53 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Ensure controller stays valid
+        // Keep controller valid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
-        // Read trigger button
-        bool triggerPressed = false;
+        // ---------- MOVEMENT ----------
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
-        // Move forward WHILE holding trigger
         if (triggerPressed)
+            MoveForward();
+
+
+        // ---------- SNAP TURNING ----------
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
         {
-            Vector3 forward = Camera.main.transform.forward;
-            forward.y = 0; // prevent flying upward
-            transform.position += forward.normalized * speed * Time.deltaTime;
+            // Swipe Left (axis.x < -threshold) → Turn Right
+            if (axis.x < -swipeThreshold && !leftSwipe)
+            {
+                SnapTurn(+snapTurnAngle);  // turn right
+                leftSwipe = true;
+            }
+            else if (axis.x > -swipeThreshold)
+            {
+                leftSwipe = false;
+            }
+
+            // Swipe Right (axis.x > +threshold) → Turn Left
+            if (axis.x > swipeThreshold && !rightSwipe)
+            {
+                SnapTurn(-snapTurnAngle);  // turn left
+                rightSwipe = true;
+            }
+            else if (axis.x < swipeThreshold)
+            {
+                rightSwipe = false;
+            }
         }
+    }
+
+    void MoveForward()
+    {
+        Vector3 direction = Camera.main.transform.forward;
+        direction.y = 0; // prevent vertical movement
+        transform.position += direction.normalized * moveSpeed * Time.deltaTime;
+    }
+
+    void SnapTurn(float angle)
+    {
+        transform.Rotate(Vector3.up, angle);
     }
 }
