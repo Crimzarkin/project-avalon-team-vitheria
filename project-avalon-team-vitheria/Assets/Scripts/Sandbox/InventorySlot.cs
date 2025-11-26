@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventorySlot : MonoBehaviour
 {
+   
     public InventoryItem myItem;
 
     public void Start()
@@ -18,8 +19,10 @@ public class InventorySlot : MonoBehaviour
 
     public void setBlock()
     {
+        Debug.Log("Test");
         if(myItem == null)
         {
+            
             return;
         }
         BuildSystem buildSystem = FindObjectOfType<BuildSystem>();

@@ -10,9 +10,9 @@ public class InventoryButton : MonoBehaviour
 
     private InputDevice controller;
     public Transform player;
-    private float uiDistance = 2.0f;
+    private float uiDistance = 4.0f;
     private float uiScale = 0.01f;
-    private float uiHeight = 0.5f;
+    private float uiHeight = 1.5f;
     private bool buttonPressed = false;
     private bool lastButtonPressed = false;
 
