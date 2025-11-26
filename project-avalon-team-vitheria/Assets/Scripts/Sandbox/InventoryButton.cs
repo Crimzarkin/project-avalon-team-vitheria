@@ -21,17 +21,20 @@ public class InventoryButton : MonoBehaviour
     }
 
     void Update()
+
     {
+  
         // Ensure controller stays valid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
+        bool buttonPressed = false;
         // Read touchpad click (primary2DAxisClick)
-        controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out buttonPressed);
-
-        // Detect rising edge (button pressed once)
-        if (buttonPressed && !lastButtonPressed)
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out buttonPressed) && buttonPressed && !lastButtonPressed)
+        
+     
         {
+       ;
             // Toggle UI
             inventoryUI.SetActive(!inventoryUI.activeSelf);
 
