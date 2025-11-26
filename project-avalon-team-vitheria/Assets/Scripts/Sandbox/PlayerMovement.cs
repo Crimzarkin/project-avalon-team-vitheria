@@ -1,20 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 3.0f;
 
-    // Update is called once per frame
-    void Update()
+    private InputDevice controller;
+
+    void Start()
     {
-        //Make it move based on rotation of y axis of camera
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
-        
-        transform.Translate(Camera.main.transform.forward * verticalInput * speed * Time.deltaTime);
-        transform.Translate(Camera.main.transform.right * horizontalInput * speed * Time.deltaTime);
+        controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
     }
 
+    void Update()
+    {
+        // Ensure controller stays valid
+        if (!controller.isValid)
+            controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        // Read trigger button
+        bool triggerPressed = false;
+        controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
+
+        // Move forward WHILE holding trigger
+        if (triggerPressed)
+        {
+            Vector3 forward = Camera.main.transform.forward;
+            forward.y = 0; // prevent flying upward
+            transform.position += forward.normalized * speed * Time.deltaTime;
+        }
+    }
 }
