@@ -39,10 +39,11 @@ public class PlayerMovement : MonoBehaviour
         // ---------- SNAP TURNING ----------
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
         {
-            // Swipe Left (axis.x < -threshold) → Turn Right
+            // Swipe Left (axis.x < -threshold) → Turn Left
+
             if (axis.x < -swipeThreshold && !leftSwipe)
             {
-                SnapTurn(+snapTurnAngle);  // turn right
+                SnapTurn(-snapTurnAngle);  // turn right
                 leftSwipe = true;
             }
             else if (axis.x > -swipeThreshold)
@@ -50,10 +51,10 @@ public class PlayerMovement : MonoBehaviour
                 leftSwipe = false;
             }
 
-            // Swipe Right (axis.x > +threshold) → Turn Left
+            // Swipe Right (axis.x > +threshold) → Turn Right
             if (axis.x > swipeThreshold && !rightSwipe)
             {
-                SnapTurn(-snapTurnAngle);  // turn left
+                SnapTurn(+snapTurnAngle);  // turn left
                 rightSwipe = true;
             }
             else if (axis.x < swipeThreshold)
