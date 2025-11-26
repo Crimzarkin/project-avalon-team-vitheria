@@ -21,6 +21,7 @@ public class VRButtonClick : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 10f, uiLayer))
             {
                 // Check if hit object has a Button
+                Debug.Log("Raycast hit: " + hit.collider.name);
                 Button button = hit.collider.GetComponent<Button>();
                 if (button != null)
                 {
