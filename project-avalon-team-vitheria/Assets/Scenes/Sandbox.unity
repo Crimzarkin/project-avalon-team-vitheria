@@ -546,15 +546,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (15)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -784,18 +779,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3983063591393173388, guid: 38d89fc53ca87664490379ba22135b22, type: 3}
---- !u!114 &54006548 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1697463007893954105, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-    type: 3}
-  m_PrefabInstance: {fileID: 1570609748}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f66cc2c2bdf38c4ab80a52ba04ac039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &69819166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7514493019166172919, guid: add27cab473f22d4dbc473bf1172bf1b,
@@ -3700,15 +3683,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (11)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -4642,7 +4620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d79677709273c24ea79d5a3930632ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 0}
+  shootingPoint: {fileID: 1996739369}
   blockObject: {fileID: 0}
   inventoryClosed: 1
   parent: {fileID: 0}
@@ -5171,15 +5149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (8)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -5389,15 +5362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (7)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -7496,15 +7464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (9)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -8755,15 +8718,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (12)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -9686,15 +9644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (6)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -11126,15 +11079,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (10)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -11276,15 +11224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (5)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -12303,15 +12246,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (4)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -12528,15 +12466,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (3)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -12868,21 +12801,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
+    - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
-      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 54006548}
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: setBlock
+      propertyPath: m_Name
+      value: Slot
       objectReference: {fileID: 0}
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
@@ -13013,15 +12936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (13)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -13347,15 +13265,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (2)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -17567,15 +17480,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
       propertyPath: m_Name
-      value: Slot (14)
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138433, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
@@ -18313,19 +18221,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657914160}
     m_Modifications:
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
+    - target: {fileID: -8828222182288459664, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 963118595}
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
-        type: 3}
-      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6860332167189778901}
-    - target: {fileID: 4631669261065160739, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
+    - target: {fileID: -8828222182288459664, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
         type: 3}
-      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: setBlock
       objectReference: {fileID: 0}
     - target: {fileID: 6860332168145138432, guid: 759dcb5f53efb4f4d9bd503abbdbda51,
