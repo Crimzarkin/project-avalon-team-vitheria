@@ -2789,6 +2789,7 @@ GameObject:
   - component: {fileID: 306254277}
   - component: {fileID: 306254276}
   - component: {fileID: 306254275}
+  - component: {fileID: 306254279}
   m_Layer: 5
   m_Name: InventorySystem
   m_TagString: Untagged
@@ -2876,6 +2877,24 @@ RectTransform:
   m_AnchoredPosition: {x: 320, y: 240}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &306254279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306254274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 1
+  m_CheckFor3DOcclusion: 1
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
 --- !u!1 &316391299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5308,8 +5327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc24d4d875e4bbe4885f28c1ece26d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  snapTurnAngle: 45
   swipeThreshold: 0.6
 --- !u!114 &584250568
 MonoBehaviour:
