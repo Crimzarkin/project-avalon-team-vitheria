@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         // ---------- MOVEMENT ----------
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
-         if (triggerPressed)
+        if (triggerPressed)
         {
             // accumulate time while trigger is held
             triggerHoldTime += Time.deltaTime;
@@ -49,14 +49,6 @@ public class PlayerMovement : MonoBehaviour
             // reset timer when trigger is released
             triggerHoldTime = 0f;
         }
-
-    void MoveForward()
-    {
-        // Your movement logic here
-        transform.Translate(Vector3.forward * Time.deltaTime);
-    }
-
-
 
         // ---------- SNAP TURNING ----------
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
