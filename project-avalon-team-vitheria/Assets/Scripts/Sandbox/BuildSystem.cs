@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -15,8 +16,11 @@ public class BuildSystem : MonoBehaviour
     private Color lastColor;
     public Color highlightedColor;
     private GameObject lastHightlightedBlock;
+
+    //XR Show Block Model
     public XRController xrController; 
 
+    // Block placement
     private bool ZoneObject = false;
     private float RaycastLength = 5.0f;
 
@@ -166,7 +170,8 @@ public class BuildSystem : MonoBehaviour
 
         if(xrController != null)
         {
-            xrController.modelPrefab = blockObject.transform;
+            var prefab = PrefabUtility.GetCorrespondingObjectFromSource(blockObject);
+            xrController.modelPrefab = prefab.transform;
         }
     }
 }
