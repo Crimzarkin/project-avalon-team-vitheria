@@ -3,11 +3,11 @@ using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float moveSpeed = 2.0f;
-    private float snapTurnAngle = 45f;
+    private float moveSpeed = 5.0f;
+    private float snapTurnAngle = 15f;
 
     private float triggerHoldTime = 0f;
-    private float requiredHoldTime = 2f;
+    private float requiredHoldTime = 0.8f;
 
     private InputDevice controller;
 
