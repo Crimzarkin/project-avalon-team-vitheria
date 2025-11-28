@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BuildSystem : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class BuildSystem : MonoBehaviour
     private Color lastColor;
     public Color highlightedColor;
     private GameObject lastHightlightedBlock;
+    public XRController xrController; 
 
     private bool ZoneObject = false;
     private float RaycastLength = 5.0f;
@@ -141,5 +143,10 @@ public class BuildSystem : MonoBehaviour
     public void changeBlock(GameObject block)
     {
         blockObject = block;
+
+        if(xrController != null)
+        {
+            xrController.modelPrefab = blockObject.transform;
+        }
     }
 }

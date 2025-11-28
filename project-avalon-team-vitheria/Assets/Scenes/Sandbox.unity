@@ -6225,6 +6225,7 @@ MonoBehaviour:
   inventoryClosed: 1
   parent: {fileID: 0}
   highlightedColor: {r: 0.9622642, g: 0.05900679, b: 0.05900679, a: 0}
+  xrController: {fileID: 1324889186}
   doublePressWindow: 0.35
 --- !u!114 &584250567
 MonoBehaviour:
