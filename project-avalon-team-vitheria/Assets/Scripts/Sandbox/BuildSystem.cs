@@ -105,9 +105,9 @@ public class BuildSystem : MonoBehaviour
             {
                 spawnPosition = hitInfo.point + hitInfo.normal * 0.5f;
                 spawnPosition = new Vector3(
-                    Mathf.RoundToInt(spawnPosition.x),
-                    Mathf.RoundToInt(spawnPosition.y),
-                    Mathf.RoundToInt(spawnPosition.z)
+                    spawnPosition.x,
+                    spawnPosition.y,
+                    spawnPosition.z
                 );
             }
             else
