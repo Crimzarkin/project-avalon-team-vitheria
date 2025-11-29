@@ -17,9 +17,6 @@ public class BuildSystem : MonoBehaviour
     public Color highlightedColor;
     private GameObject lastHightlightedBlock;
 
-    //XR Show Block Model
-    public XRController xrController; 
-
     // Block placement
     private bool ZoneObject = false;
     private float RaycastLength = 5.0f;
@@ -103,11 +100,11 @@ public class BuildSystem : MonoBehaviour
 
             if (hitInfo.transform.CompareTag("Block"))
             {
-                spawnPosition = hitInfo.point + hitInfo.normal * 0.5f;
+                spawnPosition = hitInfo.point + hitInfo.normal;
                 spawnPosition = new Vector3(
-                    spawnPosition.x,
-                    spawnPosition.y,
-                    spawnPosition.z
+                    Mathf.RoundToInt(spawnPosition.x),
+                    Mathf.RoundToInt(spawnPosition.y),
+                    Mathf.RoundToInt(spawnPosition.z)
                 );
             }
             else
@@ -167,11 +164,5 @@ public class BuildSystem : MonoBehaviour
     public void changeBlock(GameObject block)
     {
         blockObject = block;
-
-        if(xrController != null)
-        {
-            var prefab = PrefabUtility.GetCorrespondingObjectFromSource(blockObject);
-            xrController.modelPrefab = prefab.transform;
-        }
     }
 }
