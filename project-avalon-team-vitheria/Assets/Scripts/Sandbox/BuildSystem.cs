@@ -110,10 +110,11 @@ public class BuildSystem : MonoBehaviour
             else
             {
                 spawnPosition = new Vector3(
-                    Mathf.RoundToInt(hitInfo.point.x),
-                    Mathf.RoundToInt(hitInfo.point.y),
-                    Mathf.RoundToInt(hitInfo.point.z)
+                    Mathf.Round(hitInfo.point.x / 0.5f) * 0.5f,
+                    Mathf.Round(hitInfo.point.y / 0.5f) * 0.5f,
+                    Mathf.Round(hitInfo.point.z / 0.5f) * 0.5f
                 );
+
             }
 
             Instantiate(block, spawnPosition, Quaternion.identity, parent);
