@@ -16,8 +16,7 @@ public class BuildSystem : MonoBehaviour
     private Color lastColor;
     public Color highlightedColor;
     private GameObject lastHightlightedBlock;
-
-    // Block placement
+// Block placement
     private bool ZoneObject = false;
     private float RaycastLength = 5.0f;
 
@@ -98,23 +97,20 @@ public class BuildSystem : MonoBehaviour
         {
             Vector3 spawnPosition;
 
-            if (hitInfo.transform.CompareTag("Block"))
-            {
-                spawnPosition = hitInfo.point + hitInfo.normal * 0.5f;
-                spawnPosition = new Vector3(
-                    Mathf.Round(spawnPosition.x * 2f) / 2f,
-                    Mathf.Round(spawnPosition.y * 2f) / 2f,
-                    Mathf.Round(spawnPosition.z * 2f) / 2f
+             if (hitInfo.transform.CompareTag("Block"))
+            {spawnPosition = hitInfo.point + hitInfo.normal;
+                spawnPosition = new Vector3( Mathf.RoundToInt(spawnPosition.x),
+                    Mathf.RoundToInt(spawnPosition.y),
+                    Mathf.RoundToInt(spawnPosition.z)
                 );
             }
             else
             {
                 spawnPosition = new Vector3(
-                    Mathf.Round(hitInfo.point.x / 0.5f) * 0.5f,
-                    Mathf.Round(hitInfo.point.y / 0.5f) * 0.5f,
-                    Mathf.Round(hitInfo.point.z / 0.5f) * 0.5f
+                    Mathf.RoundToInt(hitInfo.point.x),
+                    Mathf.RoundToInt(hitInfo.point.y),
+                    Mathf.RoundToInt(hitInfo.point.z)
                 );
-
             }
 
             Instantiate(block, spawnPosition, Quaternion.identity, parent);
@@ -164,6 +160,5 @@ public class BuildSystem : MonoBehaviour
 
     public void changeBlock(GameObject block)
     {
-        blockObject = block;
-    }
+        blockObject = block; }
 }
