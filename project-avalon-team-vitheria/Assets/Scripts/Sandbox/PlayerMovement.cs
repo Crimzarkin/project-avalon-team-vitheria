@@ -3,8 +3,11 @@ using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 2.0f;
-    public float snapTurnAngle = 45f;
+    private float moveSpeed = 5.0f;
+    private float snapTurnAngle = 15f;
+
+    private float triggerHoldTime = 0f;
+    private float requiredHoldTime = 0.8f;
 
     private InputDevice controller;
 
@@ -33,8 +36,19 @@ public class PlayerMovement : MonoBehaviour
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
         if (triggerPressed)
-            MoveForward();
+        {
+            // accumulate time while trigger is held
+            triggerHoldTime += Time.deltaTime;
 
+            // only move forward if held long enough
+            if (triggerHoldTime >= requiredHoldTime)
+                MoveForward();
+        }
+        else
+        {
+            // reset timer when trigger is released
+            triggerHoldTime = 0f;
+        }
 
         // ---------- SNAP TURNING ----------
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
