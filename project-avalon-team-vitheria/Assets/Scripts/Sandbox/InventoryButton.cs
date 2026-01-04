@@ -19,6 +19,7 @@ public class InventoryButton : MonoBehaviour
     void Start()
     {
         inventoryUI.SetActive(false);
+
         buildSystem = FindObjectOfType<BuildSystem>();
 
         controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
@@ -27,7 +28,7 @@ public class InventoryButton : MonoBehaviour
     void Update()
 
     {
-  
+
         // Ensure controller stays valid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
