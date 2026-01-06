@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: db89bc1d3978a55448d27f14131508e5
+<<<<<<<< HEAD:project-avalon-team-vitheria/Assets/New Terrain 1.asset.meta
+guid: d7412b2f6855ada41ae7b87b68588dc9
 NativeFormatImporter:
+========
+guid: 724c0d5333dcc74428ac1c3bfe11d8f7
+DefaultImporter:
+>>>>>>>> main:project-avalon-team-vitheria/Assets/Scenes/CoralReef.unity.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
