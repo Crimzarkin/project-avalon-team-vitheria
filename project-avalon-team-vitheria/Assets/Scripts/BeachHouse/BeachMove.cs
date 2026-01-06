@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 
-public class PlayerMovement : MonoBehaviour
+public class BeachMove : MonoBehaviour
 {
     private float moveSpeed = 5.0f;
     private float snapTurnAngle = 15f;
