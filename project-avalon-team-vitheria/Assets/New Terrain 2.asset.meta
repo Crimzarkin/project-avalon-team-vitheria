@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:project-avalon-team-vitheria/Assets/New Terrain 2.asset.meta
 guid: e1769c845c8cc9144b05f07a5c33dd85
 NativeFormatImporter:
@@ -7,6 +8,10 @@ guid: be2b039d885e7d040b8765c0f73bbe3b
 folderAsset: yes
 DefaultImporter:
 >>>>>>>> main:project-avalon-team-vitheria/Assets/Scripts/CampingScene.meta
+=======
+guid: b024c93c3b6bf6044b9b373d1b6ba678
+NativeFormatImporter:
+>>>>>>> origin/CampingScene
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
