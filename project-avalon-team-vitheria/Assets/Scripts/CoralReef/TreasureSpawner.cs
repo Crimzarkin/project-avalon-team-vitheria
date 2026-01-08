@@ -11,15 +11,11 @@ public class TreasureSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        generateTreasure(1);
+        populateSpawnPoints();
+        generateTreasure(2);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Adds treasure items to unique random spots in the map.
     void generateTreasure(int amount = 5)
     {
         int[] randPositions = {};
@@ -40,6 +36,17 @@ public class TreasureSpawner : MonoBehaviour
             }
             randPositions.Append(position);
             Instantiate(treasurePrefabs[0], spawnPoints[position].position, transform.rotation);
+        }
+    }
+
+    // Fetches all tagged spawnPoints in the scene 
+    void populateSpawnPoints()
+    {
+        GameObject[] spawnPointObjects = GameObject.FindGameObjectsWithTag("ItemSpawnPoint");
+        spawnPoints = new Transform[spawnPointObjects.Length];
+        for (int spawnPoint = 0; spawnPoint < spawnPointObjects.Length; spawnPoint++)
+        {
+            spawnPoints[spawnPoint] = spawnPointObjects[spawnPoint].transform;
         }
     }
 }
