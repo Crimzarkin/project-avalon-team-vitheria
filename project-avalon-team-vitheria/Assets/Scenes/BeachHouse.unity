@@ -2855,6 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf85e34da11360438094a08c09c12f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeThreshold: 0.6
 --- !u!1 &681931999
 GameObject:
   m_ObjectHideFlags: 0
@@ -5066,7 +5067,7 @@ PrefabInstance:
     - target: {fileID: 1253252997495286169, guid: 28ab203a6204400b853fcf56294ef10b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -21.6
       objectReference: {fileID: 0}
     - target: {fileID: 1253252997495286169, guid: 28ab203a6204400b853fcf56294ef10b,
         type: 3}
