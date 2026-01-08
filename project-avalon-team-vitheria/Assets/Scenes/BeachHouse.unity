@@ -2966,7 +2966,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662569774}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 46.18, y: 11.6, z: 65.44}
+  m_LocalPosition: {x: 46.18, y: 7, z: 65.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1922191354}
@@ -2999,6 +2999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -9.81
+  controller: {fileID: 0}
+  yVelocity: 0
 --- !u!143 &662569779
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3010,7 +3012,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 15
+  m_Height: 5
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
