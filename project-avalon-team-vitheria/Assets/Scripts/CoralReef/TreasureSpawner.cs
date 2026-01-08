@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class TreasureSpawner : MonoBehaviour
 {
@@ -35,10 +33,10 @@ public class TreasureSpawner : MonoBehaviour
 
         for (int loop = 0; loop < amount; loop++)
         {
-            position = UnityEngine.Random.Range(0,numOfPositions);
+            position = Random.Range(0,numOfPositions);
             while (randPositions.Contains(position))
             {
-                position = UnityEngine.Random.Range(0,amount);
+                position = Random.Range(0,amount);
             }
             randPositions.Append(position);
             Instantiate(treasurePrefabs[0], spawnPoints[position].position, transform.rotation);
