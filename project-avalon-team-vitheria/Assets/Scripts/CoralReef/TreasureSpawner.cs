@@ -21,15 +21,17 @@ public class TreasureSpawner : MonoBehaviour
         int[] randPositions = new int[amount];
         int numOfPositions = spawnPoints.Length;
         int treasurePosition;
+        int nullVal = -1;
+        
         // Sets array values to -1 to allow 0 to be a unique value for possible positions
         for (int pos = 0; pos < amount; pos++)
         {
-            randPositions[pos] = -1;
+            randPositions[pos] = nullVal;
         }
 
         if (amount > numOfPositions)
         {
-            throw new ArgumentOutOfRangeException(nameof(amount),"Amount of objects exceeds available spawn locations");
+            throw new ArgumentOutOfRangeException(nameof(amount),"Amount of treasure exceeds available spawn locations");
         }
 
         for (int loop = 0; loop < amount; loop++)
