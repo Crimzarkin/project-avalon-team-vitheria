@@ -9,6 +9,7 @@ TagManager:
   - Grabbable
   - Teleport
   - Plot
+  - ItemSpawnPoint
   layers:
   - Default
   - TransparentFX
