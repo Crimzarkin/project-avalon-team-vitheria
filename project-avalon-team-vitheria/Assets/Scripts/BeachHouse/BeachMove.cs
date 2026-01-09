@@ -71,6 +71,13 @@ public class BeachMove : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        Vector3 pos = transform.position;
+        pos.y = 7f;
+        transform.position = pos;
+    }
+
     void MoveForward()
     {
         Vector3 direction = Camera.main.transform.forward;
