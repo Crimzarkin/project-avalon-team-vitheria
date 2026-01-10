@@ -18,24 +18,30 @@ public class TreasureSpawner : MonoBehaviour
     // Adds treasure items to unique random spots in the map.
     void generateTreasure(int amount = 5)
     {
-        int[] randPositions = {};
+        int[] randPositions = new int[amount];
         int numOfPositions = spawnPoints.Length;
-        int position;
+        int treasurePosition;
+        int nullVal = -1;
         
+        // Sets array values to -1 to allow 0 to be a unique value for possible positions
+        for (int pos = 0; pos < amount; pos++)
+        {
+            randPositions[pos] = nullVal;
+        }
+
         if (amount > numOfPositions)
         {
-            throw new ArgumentOutOfRangeException(nameof(amount),"Amount of objects exceeds available spawn locations");
+            throw new ArgumentOutOfRangeException(nameof(amount),"Amount of treasure exceeds available spawn locations");
         }
 
         for (int loop = 0; loop < amount; loop++)
         {
-            position = Random.Range(0,numOfPositions);
-            while (randPositions.Contains(position))
+            do
             {
-                position = Random.Range(0,amount);
-            }
-            randPositions.Append(position);
-            Instantiate(treasurePrefabs[0], spawnPoints[position].position, transform.rotation);
+                treasurePosition = Random.Range(0,numOfPositions);
+            } while (randPositions.Contains(treasurePosition));
+            randPositions[loop] = treasurePosition;
+            Instantiate(treasurePrefabs[0], spawnPoints[treasurePosition].position, transform.rotation);
         }
     }
 
