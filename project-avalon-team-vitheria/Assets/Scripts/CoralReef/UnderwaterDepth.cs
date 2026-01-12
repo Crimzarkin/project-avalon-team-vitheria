@@ -11,8 +11,9 @@ public class UnderwaterDepth : MonoBehaviour
     public PostProcessProfile surfaceProfile;
     public PostProcessProfile underwaterProfile;
 
-    void Update()
+    public void Update()
     {
+        Debug.Log("Camera Y Position: " + mainCamera.position.y);
         if(mainCamera.position.y < depth)
         {
             EnableUnderwaterEffects(true);
