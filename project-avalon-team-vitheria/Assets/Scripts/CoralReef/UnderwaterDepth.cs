@@ -6,15 +6,17 @@ using UnityEngine.Rendering.PostProcessing;
 public class UnderwaterDepth : MonoBehaviour
 {
     public Transform mainCamera;
-    public int depth = 0;
+    public float isUnderwaterAtY;
+    float minDepth = 0f;   // deepest point
+    float maxDepth = 140f;  // surface
+
     public PostProcessVolume volume;
     public PostProcessProfile surfaceProfile;
     public PostProcessProfile underwaterProfile;
 
     public void Update()
     {
-        Debug.Log("Camera Y Position: " + mainCamera.position.y);
-        if(mainCamera.position.y < depth)
+        if(mainCamera.position.y < isUnderwaterAtY)
         {
             EnableUnderwaterEffects(true);
         }
@@ -22,16 +24,22 @@ public class UnderwaterDepth : MonoBehaviour
         {
             EnableUnderwaterEffects(false);
         }
+        
+        float depthT = Mathf.InverseLerp(maxDepth, minDepth, mainCamera.position.y);
+        float tempValue = Mathf.Lerp(0f, 100f, depthT);
+        underwaterProfile.AddSettings<ColorGrading>().temperature.value = tempValue;
     }
 
     private void EnableUnderwaterEffects(bool active)
     {
         if (active)
         {
+            RenderSettings.fog = true;
             volume.profile = underwaterProfile;
         }
         else
         {
+            RenderSettings.fog = false;
             volume.profile = surfaceProfile;
         }
     }
