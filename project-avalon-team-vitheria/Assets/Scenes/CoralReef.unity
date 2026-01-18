@@ -32193,6 +32193,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5325122100287181771, guid: c116b7497ab8ca34c9188965d4295e27,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5843497292548984443, guid: c116b7497ab8ca34c9188965d4295e27,
         type: 3}
       propertyPath: m_Name
@@ -32296,7 +32301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1335569529}
-  depth: 25
+  isUnderwaterAtY: 140
   volume: {fileID: 455535470}
   surfaceProfile: {fileID: 11400000, guid: 35ab502486c187e418807928d0fd8af7, type: 2}
   underwaterProfile: {fileID: 11400000, guid: 55905a17b75340f439db771c7d8770ce, type: 2}
