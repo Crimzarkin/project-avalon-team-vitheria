@@ -1,43 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class ControlLever : MonoBehaviour
 {
     public GameObject Lever;
-    float velocityZ = 0.2f;
-    float posZ;
-    bool forward = true;
-    float upperBound = 0.2f;
-    float lowerBound = -0.2f;
+    public GameObject Hand;
+    public GameObject Player;
+    // Negative X rotation is up and postive x rotation is down
+    public float xDeadzone = 20;
+
     // Start is called before the first frame update
     void Start()
     {
-        upperBound += Lever.transform.position.z;
-        lowerBound += Lever.transform.position.z;
+
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        leverDisplacement();
+        throttle();Player.transform.Translate(Vector3.down*Time.deltaTime*5);
     }
-    void leverDisplacement()
+    void throttle()
     {
-        if( (forward && Lever.transform.position.z >= upperBound) || (!forward && Lever.transform.position.z <= lowerBound))
+        float handXRotation = Hand.transform.rotation.x;
+        if (handXRotation < -xDeadzone)
         {
-            forward = !forward;
-            Debug.Log("Hit");
+            Player.transform.Translate(Vector3.up*Time.deltaTime*5);
         }
-
-        if (forward)
+        else if (handXRotation > xDeadzone)
         {
-            Lever.transform.Translate(Vector3.forward * Time.deltaTime * velocityZ);
+            Player.transform.Translate(Vector3.down*Time.deltaTime*5);
         }
-        else
-        {
-            Lever.transform.Translate(Vector3.forward * Time.deltaTime * -velocityZ);
-        }
-        
     }
 }
