@@ -35,11 +35,15 @@ public class PaintCanvas : MonoBehaviour
         int x = (int)(uv.x * textureSize);
         int y = (int)(uv.y * textureSize);
 
+        Debug.Log($"Painting at UV ({uv.x:F2},{uv.y:F2}) -> pixel ({x},{y}) with color {color}");
+
         for (int i = -brushSize; i <= brushSize; i++)
         {
             for (int j = -brushSize; j <= brushSize; j++)
             {
-                texture.SetPixel(x + i, y + j, color);
+                int px = Mathf.Clamp(x + i, 0, textureSize - 1);
+                int py = Mathf.Clamp(y + j, 0, textureSize - 1);
+                texture.SetPixel(px, py, color);
             }
         }
 
@@ -49,6 +53,14 @@ public class PaintCanvas : MonoBehaviour
     Vector2 GetUV(Vector3 hitPoint)
     {
         Vector3 local = transform.InverseTransformPoint(hitPoint);
-        return new Vector2(local.x + 0.5f, local.y + 0.5f);
+
+        float u = (local.x / transform.localScale.x) + 0.5f;
+        float v = (local.y / transform.localScale.y) + 0.5f;
+
+        u = Mathf.Clamp01(u);
+        v = Mathf.Clamp01(v);
+
+        return new Vector2(u, v);
     }
 }
+
