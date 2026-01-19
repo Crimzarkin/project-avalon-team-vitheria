@@ -30,19 +30,19 @@ public class RightHandPaintInteractor : MonoBehaviour
 
     void Update()
     {
-        // Re-acquire controller if invalid
+        //Retry controller aquisition if invalid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
-        // Raycast hit
+        //Raycast hit
         RaycastHit hit;
         bool hasHit = rayInteractor.GetCurrentRaycastHit(out hit);
 
         if (hasHit)
         {
-            // Highlight palette color objects
+            //Highlight palette color objects
             ColorObject hitColorObj = hit.collider.GetComponent<ColorObject>();
             if (hitColorObj != currentHoveredColorObject)
             {
@@ -55,23 +55,24 @@ public class RightHandPaintInteractor : MonoBehaviour
                 currentHoveredColorObject = hitColorObj;
             }
 
-            // Trigger just pressed? Select color
+            //If Trigger just pressed Then Select color
             if (triggerPressed && !lastTriggerState && hitColorObj != null)
             {
                 selectedColor = hitColorObj.color;
                 Debug.Log("Selected color: " + selectedColor);
             }
 
-            // Trigger held? Paint on canvas
+            //If Trigger held Then Paint on canvas
             PaintCanvas canvas = hit.collider.GetComponent<PaintCanvas>();
             if (triggerPressed && canvas != null)
             {
-                canvas.Paint(hit.point, selectedColor);
+                canvas.Paint(hit, selectedColor); // pass the RaycastHit
+
             }
         }
         else
         {
-            // No hit: remove highlight
+            //remove highlight
             if (currentHoveredColorObject != null)
             {
                 currentHoveredColorObject.Highlight(false);

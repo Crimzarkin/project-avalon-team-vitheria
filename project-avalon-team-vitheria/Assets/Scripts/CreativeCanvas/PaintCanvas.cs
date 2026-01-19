@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PaintCanvas : MonoBehaviour
 {
-    public int textureSize = 1024;
+    public int textureSize = 512;
     public int brushSize = 6;
+    public Material canvasMaterial;
 
     private Texture2D texture;
     private Renderer rend;
@@ -17,6 +18,7 @@ public class PaintCanvas : MonoBehaviour
         texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
         texture.filterMode = FilterMode.Point;
 
+
         Color[] fill = new Color[textureSize * textureSize];
         for (int i = 0; i < fill.Length; i++)
             fill[i] = Color.white;
@@ -24,18 +26,19 @@ public class PaintCanvas : MonoBehaviour
         texture.SetPixels(fill);
         texture.Apply();
 
-        rend.material = new Material(Shader.Find("Unlit/Texture"));
+
+        rend.material = new Material(canvasMaterial);
         rend.material.mainTexture = texture;
     }
 
-    public void Paint(Vector3 hitPoint, Color color)
+    public void Paint(RaycastHit hit, Color color)
     {
-        Vector2 uv = GetUV(hitPoint);
+        color.a = 1f;
+
+        Vector2 uv = hit.textureCoord;
 
         int x = (int)(uv.x * textureSize);
         int y = (int)(uv.y * textureSize);
-
-        Debug.Log($"Painting at UV ({uv.x:F2},{uv.y:F2}) -> pixel ({x},{y}) with color {color}");
 
         for (int i = -brushSize; i <= brushSize; i++)
         {
@@ -50,17 +53,4 @@ public class PaintCanvas : MonoBehaviour
         texture.Apply();
     }
 
-    Vector2 GetUV(Vector3 hitPoint)
-    {
-        Vector3 local = transform.InverseTransformPoint(hitPoint);
-
-        float u = (local.x / transform.localScale.x) + 0.5f;
-        float v = (local.y / transform.localScale.y) + 0.5f;
-
-        u = Mathf.Clamp01(u);
-        v = Mathf.Clamp01(v);
-
-        return new Vector2(u, v);
-    }
 }
-
