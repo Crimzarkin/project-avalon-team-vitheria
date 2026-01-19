@@ -4,39 +4,21 @@ using UnityEngine;
 
 public class SwitchChannel : MonoBehaviour
 {
-    public GameObject channel1;
-    public GameObject channel2;
+    public List<Sprite> channels = new List<Sprite>();
+    public GameObject map;
+    private int channel = 1;
 
-    private bool isChannel1Active = true;
-
-    void Start()
+    public void ToggleChannels()
     {
-        ActivateChannel1();
-    }
-
-    void ToggleChannels()
-    {
-        if (isChannel1Active)
+        if (channel < channels.Count)
         {
-            ActivateChannel2();
+            map.GetComponent<SpriteRenderer>().sprite = channels[channel];
+            channel++;
         }
         else
         {
-            ActivateChannel1();
+            map.GetComponent<SpriteRenderer>().sprite = channels[0];
+            channel = 1;
         }
-    }
-
-    void ActivateChannel1()
-    {
-        channel1.SetActive(true);
-        channel2.SetActive(false);
-        isChannel1Active = true;
-    }
-
-    void ActivateChannel2()
-    {
-        channel1.SetActive(false);
-        channel2.SetActive(true);
-        isChannel1Active = false;
     }
 }
