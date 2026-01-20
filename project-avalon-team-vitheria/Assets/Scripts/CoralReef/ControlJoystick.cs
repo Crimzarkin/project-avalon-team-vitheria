@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlJoystick : MonoBehaviour
 {
     public GameObject Joystick;
+    public GameObject Hand;
     // Start is called before the first frame update
     void Start()
     {
