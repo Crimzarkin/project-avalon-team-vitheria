@@ -3,7 +3,7 @@ using UnityEngine.XR;
 
 public class BeachMove : MonoBehaviour
 {
-    private float moveSpeed = 5.0f;
+    public float moveSpeed = 5.0f;
     private float snapTurnAngle = 15f;
 
     private float triggerHoldTime = 0f;
