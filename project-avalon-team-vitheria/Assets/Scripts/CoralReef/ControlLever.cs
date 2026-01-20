@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ControlLever : MonoBehaviour
 {
+    public GameObject Lever;
     public GameObject Hand;
     // Negative X rotation is up and postive x rotation is down
     public float xDeadzone = 20;
