@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BeachHouse.unity
     guid: 3aecd67c82d21234cb261e460d98165e
+  - enabled: 1
+    path: Assets/Scenes/Stargazing.unity
+    guid: 812889e5659c7e74f8d8fc97d6f6410b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ec9eab6089d98a64bafd19c267a85267,
       type: 2}
