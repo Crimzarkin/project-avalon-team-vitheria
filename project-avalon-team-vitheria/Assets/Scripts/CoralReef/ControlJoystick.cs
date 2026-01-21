@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControlJoystick : MonoBehaviour
 {
@@ -32,17 +29,21 @@ public class ControlJoystick : MonoBehaviour
         }
     }
     
-    void controlRotation()
+    private void controlRotation()
     {
-        float handYRotation =  Hand.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y;
-        Debug.Log(handYRotation);
-        if (180 < handYRotation && handYRotation < 360 - yDeadzone)
-        {
-            transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
-        }
-        else if (180 > handYRotation && handYRotation > yDeadzone)
+        Vector3 handVector = new Vector3(Hand.transform.forward.x,0,Hand.transform.forward.z);
+        Vector3 subVector = new Vector3(transform.forward.x,0,transform.forward.z);
+
+        float yAngle = -Vector3.SignedAngle(subVector,handVector,transform.forward);
+
+        Debug.Log(yAngle);
+        if (yDeadzone < yAngle)
         {
             transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
+        }
+        else if (yAngle < -yDeadzone)
+        {
+            transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
         }        
     }
 }
