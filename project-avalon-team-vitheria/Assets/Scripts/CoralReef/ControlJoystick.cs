@@ -5,11 +5,11 @@ public class ControlJoystick : MonoBehaviour
     [SerializeField] private GameObject Joystick;
     [SerializeField] private GameObject Hand;
     // Negative X rotation is up and postive X rotation is down
-    [SerializeField] private float xDeadzone = 20;
+    [SerializeField] private float xDeadzone = 10;
     // Negative Y rotation is left and postive Y rotation is right
-    [SerializeField] private float yDeadzone = 20;
-    [SerializeField] private float movementSpeed = 300;
-    [SerializeField] private float rotationSpeed = 500; 
+    [SerializeField] private float yDeadzone = 10;
+    [SerializeField] private float movementSpeed = 15;
+    [SerializeField] private float rotationSpeed = 15; 
     void LateUpdate()
     {
         controlRotation();
@@ -18,7 +18,7 @@ public class ControlJoystick : MonoBehaviour
 
     private void controlMovement()
     {
-        float handXRotation = Hand.transform.rotation.eulerAngles.x;
+        float handXRotation = Hand.transform.localEulerAngles.x;
         if (180 < handXRotation && handXRotation < 360 - xDeadzone)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
@@ -31,17 +31,12 @@ public class ControlJoystick : MonoBehaviour
     
     private void controlRotation()
     {
-        Vector3 handVector = new Vector3(Hand.transform.forward.x,0,Hand.transform.forward.z);
-        Vector3 subVector = new Vector3(transform.forward.x,0,transform.forward.z);
-
-        float yAngle = -Vector3.SignedAngle(subVector,handVector,transform.forward);
-
-        Debug.Log(yAngle);
-        if (yDeadzone < yAngle)
+        float handYRotation = Hand.transform.localEulerAngles.y;
+        if (yDeadzone < handYRotation && handYRotation < 180)
         {
             transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
         }
-        else if (yAngle < -yDeadzone)
+        else if (180 < handYRotation && handYRotation < 360 - yDeadzone)
         {
             transform.Rotate(Vector3.down * Time.deltaTime * rotationSpeed);
         }        
