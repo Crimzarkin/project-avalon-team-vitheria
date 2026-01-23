@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LucisGarden.unity
     guid: 37830163ff94dba49994f19ff53cb0d3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sandbox.unity
     guid: 3f33e26bc426815408d393a579fb6cda
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: a20546a84217e874f9a651b374784ffe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BeachHouse.unity
     guid: 3aecd67c82d21234cb261e460d98165e
   - enabled: 1
