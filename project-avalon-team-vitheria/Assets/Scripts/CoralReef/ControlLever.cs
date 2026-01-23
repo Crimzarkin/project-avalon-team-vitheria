@@ -6,10 +6,14 @@ public class ControlLever : MonoBehaviour
 {
     [SerializeField] private GameObject Lever;
     [SerializeField] private GameObject Hand;
-    [SerializeField] private float ySpeed = 5;
+    [SerializeField] private float verticalSpeed = 1f;
+    private Rigidbody playerRB;
     // Negative X rotation is up and postive x rotation is down
     public float xDeadzone = 10;
-
+    void Start()
+    {
+        playerRB = GetComponent<Rigidbody>();
+    }
     void LateUpdate()
     {
         controlDepth();
@@ -20,11 +24,11 @@ public class ControlLever : MonoBehaviour
         float handXRotation = Hand.transform.localEulerAngles.x;
         if ( 180 < handXRotation && handXRotation < 360-xDeadzone)
         {
-            transform.Translate(Vector3.up*Time.deltaTime*ySpeed);
+            playerRB.AddForce(transform.up * verticalSpeed);
         }
         else if (180 > handXRotation && handXRotation > xDeadzone)
         {
-            transform.Translate(Vector3.down*Time.deltaTime*ySpeed);
+            playerRB.AddForce(transform.up * -verticalSpeed);
         }
     }
 }

@@ -5,22 +5,23 @@ using Random = UnityEngine.Random;
 
 public class TreasureSpawner : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    public GameObject[] treasurePrefabs;
-
+    private Transform[] spawnPoints;
+    [SerializeField] private GameObject[] treasurePrefabs;
+    [SerializeField] private int treasureAmount;
     // Start is called before the first frame update
     void Start()
     {
         populateSpawnPoints();
-        generateTreasure(2);
+        generateTreasure(treasureAmount);
     }
 
     // Adds treasure items to unique random spots in the map.
-    void generateTreasure(int amount = 5)
+    private void generateTreasure(int amount = 5)
     {
         int[] randPositions = new int[amount];
         int numOfPositions = spawnPoints.Length;
         int treasurePosition;
+        int treasurePrefabSelector;
         int nullVal = -1;
         
         // Sets array values to -1 to allow 0 to be a unique value for possible positions
@@ -38,10 +39,11 @@ public class TreasureSpawner : MonoBehaviour
         {
             do
             {
-                treasurePosition = Random.Range(0,numOfPositions);
+                treasurePosition = Random.Range(0,spawnPoints.Length);
+                treasurePrefabSelector = Random.Range(0,treasurePrefabs.Length);
             } while (randPositions.Contains(treasurePosition));
             randPositions[loop] = treasurePosition;
-            Instantiate(treasurePrefabs[0], spawnPoints[treasurePosition].position, transform.rotation);
+            Instantiate(treasurePrefabs[treasurePrefabSelector], spawnPoints[treasurePosition].position, transform.rotation);
         }
     }
 

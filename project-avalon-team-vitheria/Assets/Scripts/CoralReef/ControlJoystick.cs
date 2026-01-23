@@ -8,8 +8,13 @@ public class ControlJoystick : MonoBehaviour
     [SerializeField] private float xDeadzone = 10;
     // Negative Y rotation is left and postive Y rotation is right
     [SerializeField] private float yDeadzone = 10;
-    [SerializeField] private float movementSpeed = 15;
-    [SerializeField] private float rotationSpeed = 15; 
+    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float rotationSpeed = 15f; 
+    private Rigidbody playerRB;
+    void Start()
+    {
+        playerRB = GetComponent<Rigidbody>();
+    }
     void LateUpdate()
     {
         controlRotation();
@@ -21,11 +26,12 @@ public class ControlJoystick : MonoBehaviour
         float handXRotation = Hand.transform.localEulerAngles.x;
         if (180 < handXRotation && handXRotation < 360 - xDeadzone)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
+            playerRB.AddForce(transform.forward * movementSpeed); 
+            
         }
         else if (180 > handXRotation && handXRotation > xDeadzone)
         {
-            transform.Translate(Vector3.back * Time.deltaTime * movementSpeed);
+            playerRB.AddForce(transform.forward * -movementSpeed); 
         }
     }
     
