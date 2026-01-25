@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 111190153}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -336,7 +336,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 118159193}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
 --- !u!65 &11986148
@@ -407,8 +407,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11986146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.483, y: 12.71, z: -82.98}
-  m_LocalScale: {x: 1, y: 0.30254, z: 0.98022}
+  m_LocalPosition: {x: 78.2, y: 12.05, z: -81.8}
+  m_LocalScale: {x: 3.817332, y: 1.1548957, z: 3.7418253}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Timeout: 10
-  m_XRRig: {fileID: 0}
+  m_XRRig: {fileID: 270422955}
 --- !u!4 &118159195
 Transform:
   m_ObjectHideFlags: 0
@@ -13028,7 +13028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1072811411
 Transform:
   m_ObjectHideFlags: 0
