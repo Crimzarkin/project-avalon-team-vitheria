@@ -496,7 +496,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 762054308}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
 --- !u!65 &11986148
@@ -3726,7 +3726,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 762054308}
   m_MatchOrientation: 2
   m_TeleportTrigger: 0
   m_TeleportAnchorTransform: {fileID: 324024516}
@@ -11894,7 +11894,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 762054308}
   m_MatchOrientation: 2
   m_TeleportTrigger: 0
   m_TeleportAnchorTransform: {fileID: 866207820}
@@ -12227,15 +12227,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916059160}
-  m_LocalRotation: {x: -0, y: 0.016871715, z: -0, w: 0.99985766}
-  m_LocalPosition: {x: 78.3, y: 14.73, z: -89.26}
+  m_LocalRotation: {x: -0, y: 0.69087785, z: -0, w: 0.72297156}
+  m_LocalPosition: {x: 35.3, y: 14.73, z: -61.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427058785}
   - {fileID: 1665634151}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 1.9330001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 87.399, z: 0}
 --- !u!1 &918075802
 GameObject:
   m_ObjectHideFlags: 0
@@ -14110,7 +14110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 762054308}
   m_MatchOrientation: 2
   m_TeleportTrigger: 0
   m_TeleportAnchorTransform: {fileID: 1163411904}
@@ -17105,7 +17105,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_TeleportationProvider: {fileID: 1665634149}
+  m_TeleportationProvider: {fileID: 762054308}
   m_MatchOrientation: 2
   m_TeleportTrigger: 0
   m_TeleportAnchorTransform: {fileID: 1605448751}
