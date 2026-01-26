@@ -26,12 +26,14 @@ public class ControlJoystick : MonoBehaviour
         float handXRotation = Hand.transform.localEulerAngles.x;
         if (180 < handXRotation && handXRotation < 360 - xDeadzone)
         {
-            playerRB.AddForce(transform.forward * movementSpeed); 
+            // playerRB.AddForce(transform.forward * movementSpeed); 
+            transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
             
         }
         else if (180 > handXRotation && handXRotation > xDeadzone)
         {
-            playerRB.AddForce(transform.forward * -movementSpeed); 
+            // playerRB.AddForce(transform.forward * -movementSpeed); 
+            transform.Translate(Vector3.back * Time.deltaTime * movementSpeed);
         }
     }
     
