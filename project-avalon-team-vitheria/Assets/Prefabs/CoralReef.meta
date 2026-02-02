@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:project-avalon-team-vitheria/Assets/Prefabs/CreativeCanvas.meta
+guid: cf0e9b7962dc6924c8ac63c1816be458
+========
+guid: 2d134fa5a7d245d4ab9b8534b80afa75
+>>>>>>>> main:project-avalon-team-vitheria/Assets/Prefabs/CoralReef.meta
+=======
+guid: cf0e9b7962dc6924c8ac63c1816be458
+>>>>>>> CreativeCanvas
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
