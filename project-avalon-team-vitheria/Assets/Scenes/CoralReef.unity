@@ -31798,15 +31798,6 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 915686147}
         m_MethodName: Play
@@ -31830,7 +31821,7 @@ MonoBehaviour:
           m_StringArgument: Clicked
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 854469042}
+      - m_Target: {fileID: 915686146}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -31841,6 +31832,15 @@ MonoBehaviour:
           m_StringArgument: Extend
           m_BoolArgument: 0
         m_CallState: 2
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
