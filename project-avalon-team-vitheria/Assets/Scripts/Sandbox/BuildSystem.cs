@@ -37,7 +37,7 @@ public class BuildSystem : MonoBehaviour
         controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
     }
 
-    private void Update()
+    public void Update()
     {
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
@@ -161,5 +161,7 @@ public class BuildSystem : MonoBehaviour
 
     public void changeBlock(GameObject block)
     {
-        blockObject = block; }
+        blockObject = block; 
+        Debug.Log("Block Changed");
+    }
 }
