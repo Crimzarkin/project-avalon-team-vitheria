@@ -11,6 +11,7 @@ public class TreasureSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    
         populateSpawnPoints();
         generateTreasure(treasureAmount);
     }
@@ -47,7 +48,7 @@ public class TreasureSpawner : MonoBehaviour
         }
     }
 
-    // Fetches all tagged spawnPoints in the scene 
+    // Fetches all tagged spawnPoints in the scene
     void populateSpawnPoints()
     {
         GameObject[] spawnPointObjects = GameObject.FindGameObjectsWithTag("ItemSpawnPoint");
