@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:project-avalon-team-vitheria/Assets/New Terrain 2.asset.meta
+<<<<<<< HEAD
+guid: f1d0d7dfb4f8b4440bf5377bc9883031
+=======
+guid: 98308d88693864347856d4360644e029
+>>>>>>> CreativeCanvas
+NativeFormatImporter:
+========
+guid: be2b039d885e7d040b8765c0f73bbe3b
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> main:project-avalon-team-vitheria/Assets/Scripts/CampingScene.meta
+=======
+guid: b024c93c3b6bf6044b9b373d1b6ba678
+NativeFormatImporter:
+>>>>>>> origin/CampingScene
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
