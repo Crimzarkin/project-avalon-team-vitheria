@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<<< HEAD:project-avalon-team-vitheria/Assets/New Terrain 2.asset.meta
 guid: f1d0d7dfb4f8b4440bf5377bc9883031
 NativeFormatImporter:
@@ -8,10 +7,6 @@ guid: be2b039d885e7d040b8765c0f73bbe3b
 folderAsset: yes
 DefaultImporter:
 >>>>>>>> main:project-avalon-team-vitheria/Assets/Scripts/CampingScene.meta
-=======
-guid: 0ad565352e6b959459dd0d53a4608451
-NativeFormatImporter:
->>>>>>> Coral-Reef
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
