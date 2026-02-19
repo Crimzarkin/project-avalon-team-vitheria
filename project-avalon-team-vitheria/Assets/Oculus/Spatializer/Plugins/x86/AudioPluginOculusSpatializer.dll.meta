@@ -12,12 +12,22 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      : Editor
+      : Any
     second:
       enabled: 0
       settings:
-        CPU: X86
-        OS: Windows
+        Exclude Android: 1
+        Exclude Editor: 0
+        Exclude Linux64: 1
+        Exclude OSXUniversal: 1
+        Exclude Win: 0
+        Exclude Win64: 0
+  - first:
+      Android: Android
+    second:
+      enabled: 0
+      settings:
+        CPU: ARMv7
   - first:
       Any: 
     second:
@@ -28,9 +38,9 @@ PluginImporter:
     second:
       enabled: 1
       settings:
-        CPU: X86
+        CPU: x86
         DefaultValueInitialized: true
-        OS: Windows
+        OS: AnyOS
   - first:
       Standalone: Linux64
     second:
@@ -42,17 +52,17 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        CPU: x86
+        CPU: None
   - first:
       Standalone: Win
     second:
       enabled: 1
       settings:
-        CPU: AnyCPU
+        CPU: None
   - first:
       Standalone: Win64
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: None
   userData: 

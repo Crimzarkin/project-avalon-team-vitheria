@@ -4,6 +4,9 @@ using UnityEngine.XR;
 public class PlayerMovement : MonoBehaviour
 {
     private float moveSpeed = 5.0f;
+    float stepHeight = 1f;        // max height you can step up
+    float floatDownSpeed = 2f;    // how fast you float down
+    float groundCheckDistance = 0.1f;
     private float snapTurnAngle = 15f;
 
     private float triggerHoldTime = 0f;
@@ -77,13 +80,37 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     void MoveForward()
     {
         Vector3 direction = Camera.main.transform.forward;
-        direction.y = 0; // prevent vertical movement
-        transform.position += direction.normalized * moveSpeed * Time.deltaTime;
+        direction.y = 0;
+        direction.Normalize();
+
+        Vector3 targetPos = transform.position + direction * moveSpeed * Time.deltaTime;
+
+        // step up check
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, 0.6f)) //Check raycast coming from players body, not controller
+        {
+            // If there's a block in front, try stepping up
+            Vector3 stepCheck = transform.position + Vector3.up * stepHeight;
+
+            // Cast again from higher position
+            if (!Physics.Raycast(stepCheck, direction, 0.6f))
+            {
+                // Free space above → step up
+                targetPos.y += stepHeight;
+            }
+        }
+
+        // float down
+        if (!Physics.Raycast(targetPos + Vector3.up * 0.1f, Vector3.down, groundCheckDistance))
+        {
+            targetPos.y -= floatDownSpeed * Time.deltaTime;
+        }
+
+        transform.position = targetPos;
     }
+
 
     void SnapTurn(float angle)
     {
