@@ -98,7 +98,7 @@ public class BuildSystem : MonoBehaviour
             Vector3 spawnPosition;
 
             if (hitInfo.transform.CompareTag("Block"))
-            {spawnPosition = hitInfo.point + hitInfo.normal * 0.5f;
+            {spawnPosition = hitInfo.point + hitInfo.normal * 0.125f;
                 spawnPosition = new Vector3( 
                     Mathf.RoundToInt(spawnPosition.x),
                     Mathf.RoundToInt(spawnPosition.y),
