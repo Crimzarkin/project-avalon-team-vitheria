@@ -37,7 +37,7 @@ public class BuildSystem : MonoBehaviour
         controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
     }
 
-    public void Update()
+    private void Update()
     {
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
@@ -98,7 +98,7 @@ public class BuildSystem : MonoBehaviour
             Vector3 spawnPosition;
 
             if (hitInfo.transform.CompareTag("Block"))
-            {spawnPosition = hitInfo.point + hitInfo.normal * 0.125f;
+            {spawnPosition = hitInfo.point + hitInfo.normal * 0.25f;
                 spawnPosition = new Vector3( 
                     Mathf.RoundToInt(spawnPosition.x),
                     Mathf.RoundToInt(spawnPosition.y),
@@ -161,7 +161,5 @@ public class BuildSystem : MonoBehaviour
 
     public void changeBlock(GameObject block)
     {
-        blockObject = block; 
-        Debug.Log("Block Changed");
-    }
+        blockObject = block; }
 }
