@@ -2,20 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.SceneManagement;
 
 public class GrabObject : MonoBehaviour
 {
-    public string mainMenuSceneName = "MainMenu";
-    public float backHoldTime = 1.5f;
-
-    private float menuHoldTimer = 0f;
-
-    public GameObject tutorialPanel;
-
-    private bool tutorialOpen = false;
-    private bool menuPreviouslyPressed = false;
-
     public Transform handPosition;
     public GameObject heldObject = null;
     public Transform XRRig;
@@ -35,10 +24,6 @@ public class GrabObject : MonoBehaviour
     void Start()
     {
         controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-        if (tutorialPanel != null)
-        {
-            tutorialPanel.SetActive(false);
-        }
     }
 
     void Update()
@@ -46,34 +31,7 @@ public class GrabObject : MonoBehaviour
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
-        // Oculus Go return button state for menu button, toggle tutorial panel
-        bool menuPressed = false;
-        if (controller.TryGetFeatureValue(CommonUsages.menuButton, out menuPressed))
-        {
-            if (menuPressed)
-            {
-                menuHoldTimer += Time.deltaTime;
-
-                if (menuHoldTimer >= backHoldTime)
-                {
-                    LoadMainMenu();
-                }
-            }
-            else
-            {
-                menuHoldTimer = 0f;
-
-                if (!menuPreviouslyPressed)
-                {
-                    ToggleTutorial();
-                }
-            }
-
-            menuPreviouslyPressed = menuPressed;
-        }
-
-
-        // Grab / Drop / Teleport Using 2D Axis
+        // Grab / Drop / Teleport
         bool buttonPressed = false;
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out buttonPressed) && buttonPressed && !buttonPreviouslyPressed)
         {
@@ -246,25 +204,4 @@ public class GrabObject : MonoBehaviour
             originalMaterial = null;
         }
     }
-
-    void ToggleTutorial()
-    {
-        tutorialOpen = !tutorialOpen;
-
-        if (tutorialPanel != null)
-            tutorialPanel.SetActive(tutorialOpen);
-            
-        // Pause game while tutorial open
-        //Time.timeScale = tutorialOpen ? 0f : 1f;
-    }
-
-    void LoadMainMenu()
-    {
-        //unpause game if paused
-        //Time.timeScale = 1f;
-
-        SceneManager.LoadScene(mainMenuSceneName);
-    }
-
-
 }
