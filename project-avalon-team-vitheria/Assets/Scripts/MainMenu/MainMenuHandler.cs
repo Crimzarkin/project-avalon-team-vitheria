@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class VRButtonSceneLoader : MonoBehaviour
+public class MainMenuHandler : MonoBehaviour
 {
-    public XRNode controllerNode = XRNode.RightHand;
-    public float rayLength = 10f;
+    public XRNode controllerNode = XRNode.RightHand; // Controller to use
+    public float rayLength = 10f; // Max distance to detect buttons
 
     private InputDevice controller;
 
@@ -19,10 +17,11 @@ public class VRButtonSceneLoader : MonoBehaviour
 
     void Update()
     {
+        // Make sure the controller is valid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(controllerNode);
 
-        // Check if trigger is pressed
+        // Check if the trigger is pressed
         bool triggerPressed = false;
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
