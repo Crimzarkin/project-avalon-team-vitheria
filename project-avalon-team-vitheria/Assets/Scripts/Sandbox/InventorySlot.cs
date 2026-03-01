@@ -21,10 +21,14 @@ public class InventorySlot : MonoBehaviour
     {
         if(myItem == null)
         {
-            
+            Debug.Log("No item in this slot!");
             return;
         }
         BuildSystem buildSystem = FindObjectOfType<BuildSystem>();
+        if(buildSystem == null)
+        {
+            Debug.Log("No BuildSystem found in the scene!");
+        }
         buildSystem.changeBlock(myItem.myItem.itemPrefab);
     }
 }
