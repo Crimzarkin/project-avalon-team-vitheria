@@ -6,15 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GrabObject : MonoBehaviour
 {
+    private float axisHoldTimer = 0f;
+    public float axisHoldTime = 2f;
     public string mainMenuSceneName = "MainMenu";
-    public float backHoldTime = 1.5f;
-
-    private float menuHoldTimer = 0f;
-
     public GameObject tutorialPanel;
 
     private bool tutorialOpen = false;
-    private bool menuPreviouslyPressed = false;
 
     public Transform handPosition;
     public GameObject heldObject = null;
@@ -46,91 +43,85 @@ public class GrabObject : MonoBehaviour
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
-        // Oculus Go return button state for menu button, toggle tutorial panel
-        bool menuPressed = false;
-        if (controller.TryGetFeatureValue(CommonUsages.menuButton, out menuPressed))
-        {
-            if (menuPressed)
-            {
-                menuHoldTimer += Time.deltaTime;
 
-                if (menuHoldTimer >= backHoldTime)
+        // Grab / Drop / Teleport Using 2D Axis
+        bool buttonPressed = false;
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out buttonPressed))
+        {
+            if (buttonPressed)
+            {
+                axisHoldTimer += Time.deltaTime;
+
+                // If held long enough → Load Main Menu
+                if (axisHoldTimer >= axisHoldTime)
                 {
                     LoadMainMenu();
+                    return;
                 }
             }
             else
             {
-                menuHoldTimer = 0f;
-
-                if (!menuPreviouslyPressed)
+                // If released before hold time → Perform normal grab logic
+                if (axisHoldTimer > 0f && axisHoldTimer < axisHoldTime)
                 {
-                    ToggleTutorial();
-                }
-            }
+                    Ray ray = new Ray(transform.position, transform.forward);
+                    RaycastHit hit;
 
-            menuPreviouslyPressed = menuPressed;
-        }
-
-
-        // Grab / Drop / Teleport Using 2D Axis
-        bool buttonPressed = false;
-        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out buttonPressed) && buttonPressed && !buttonPreviouslyPressed)
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, grabRange))
-            {
-                GameObject hitObject = hit.collider.gameObject;
-
-                if (hitObject.CompareTag("Grabbable"))
-                {
-                    grabRange = 4.0f; // Reset range
-                    if (heldObject == null)
-                        AttemptPickup(hitObject);
-                    else
-                        AttemptDrop();
-                }
-                else if (hitObject.CompareTag("Teleport"))
-                {
-                    grabRange = teleportRange; // Extend range for teleport
-                    TeleportTo(hitObject.transform.position);
-                }
-                else if (hitObject.CompareTag("Plot"))
-                {
-                    PlotScript plot = hitObject.GetComponent<PlotScript>();
-                    
-                    if (heldObject != null && plot != null)
+                    if (Physics.Raycast(ray, out hit, grabRange))
                     {
-                        // SOIL
-                        SoilItem soil = heldObject.GetComponent<SoilItem>();
-                        if (soil != null)
-                        {
-                            plot.ApplySoil(soil.soilMaterial);
-                            AttemptDrop();
-                            return;
-                        }
+                        GameObject hitObject = hit.collider.gameObject;
 
-                        // SEEDS
-                        SeedItem seed = heldObject.GetComponent<SeedItem>();
-                        if (seed != null && plot.isSoiled && !plot.hasSeed)
+                        if (hitObject.CompareTag("Grabbable"))
                         {
-                            plot.PlantSeed(seed.seedMaterial);
-                            AttemptDrop();
-                            return;
+                            grabRange = 4.0f;
+                            if (heldObject == null)
+                                AttemptPickup(hitObject);
+                            else
+                                AttemptDrop();
                         }
-
-                        // WATER
-                        WaterItem water = heldObject.GetComponent<WaterItem>();
-                        if( water != null && plot.isSoiled && !plot.hasSeed && !plot.isWatered)
+                        else if (hitObject.CompareTag("Teleport"))
                         {
-                            plot.WaterPlot();
-                            AttemptDrop();
-                            return;
+                            grabRange = teleportRange;
+                            TeleportTo(hitObject.transform.position);
+                        }
+                        else if (hitObject.CompareTag("Plot"))
+                        {
+                            PlotScript plot = hitObject.GetComponent<PlotScript>();
+
+                            if (heldObject != null && plot != null)
+                            {
+                                SoilItem soil = heldObject.GetComponent<SoilItem>();
+                                if (soil != null)
+                                {
+                                    plot.ApplySoil(soil.soilMaterial);
+                                    AttemptDrop();
+                                    axisHoldTimer = 0f;
+                                    return;
+                                }
+
+                                SeedItem seed = heldObject.GetComponent<SeedItem>();
+                                if (seed != null && plot.isSoiled && !plot.hasSeed)
+                                {
+                                    plot.PlantSeed(seed.seedMaterial);
+                                    AttemptDrop();
+                                    axisHoldTimer = 0f;
+                                    return;
+                                }
+
+                                WaterItem water = heldObject.GetComponent<WaterItem>();
+                                if (water != null && plot.isSoiled && !plot.hasSeed && !plot.isWatered)
+                                {
+                                    plot.WaterPlot();
+                                    AttemptDrop();
+                                    axisHoldTimer = 0f;
+                                    return;
+                                }
+                            }
                         }
                     }
                 }
+
+                axisHoldTimer = 0f;
             }
         }
         buttonPreviouslyPressed = buttonPressed;
