@@ -6,20 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a20546a84217e874f9a651b374784ffe
+  - enabled: 1
     path: Assets/Scenes/LucisGarden.unity
     guid: 37830163ff94dba49994f19ff53cb0d3
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: 3f33e26bc426815408d393a579fb6cda
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: a20546a84217e874f9a651b374784ffe
-  - enabled: 1
     path: Assets/Scenes/BeachHouse.unity
     guid: 3aecd67c82d21234cb261e460d98165e
   - enabled: 1
     path: Assets/Scenes/CampingScene.unity
     guid: 35a0dc836efd93c44a68027d66b793d5
+  - enabled: 1
+    path: Assets/Scenes/CoralReef.unity
+    guid: 724c0d5333dcc74428ac1c3bfe11d8f7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ec9eab6089d98a64bafd19c267a85267,
       type: 2}
