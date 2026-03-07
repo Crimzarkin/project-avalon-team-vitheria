@@ -98,7 +98,7 @@ public class BuildSystem : MonoBehaviour
             Vector3 spawnPosition;
 
             if (hitInfo.transform.CompareTag("Block"))
-            {spawnPosition = hitInfo.point + hitInfo.normal * 0.125f;
+            {spawnPosition = hitInfo.point + hitInfo.normal * 0.5f;
                 spawnPosition = new Vector3( 
                     Mathf.RoundToInt(spawnPosition.x),
                     Mathf.RoundToInt(spawnPosition.y),
@@ -116,6 +116,12 @@ public class BuildSystem : MonoBehaviour
 
             Instantiate(block, spawnPosition, Quaternion.identity, parent);
         }
+    }
+
+    public void ResetBlocks()
+    {
+        foreach (Transform child in parent)
+            Destroy(child.gameObject);
     }
 
     void DestroyBlock()
