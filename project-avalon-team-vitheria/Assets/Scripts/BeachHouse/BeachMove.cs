@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public class BeachMove : MonoBehaviour
 {
@@ -15,10 +16,14 @@ public class BeachMove : MonoBehaviour
     private Vector2 axis;
     private bool leftSwipe = false;
     private bool rightSwipe = false;
-
     public float swipeThreshold = 0.6f;
 
     private CharacterController characterController;
+
+    // ----- Main Menu Hold Variables -----
+    public float axisHoldTime = 2f;
+    private float axisHoldTimer = 0f;
+    public string mainMenuSceneName = "MainMenu";
 
     void Start()
     {
@@ -49,6 +54,7 @@ public class BeachMove : MonoBehaviour
         // ---------- SNAP TURN ----------
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
         {
+            // Snap turn left
             if (axis.x < -swipeThreshold && !leftSwipe)
             {
                 SnapTurn(-snapTurnAngle);
@@ -59,6 +65,7 @@ public class BeachMove : MonoBehaviour
                 leftSwipe = false;
             }
 
+            // Snap turn right
             if (axis.x > swipeThreshold && !rightSwipe)
             {
                 SnapTurn(+snapTurnAngle);
@@ -68,6 +75,22 @@ public class BeachMove : MonoBehaviour
             {
                 rightSwipe = false;
             }
+        }
+
+        // ---------- HOLD STICK BUTTON TO RETURN TO MAIN MENU ----------
+        bool axisPressed = false;
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out axisPressed) && axisPressed)
+        {
+            axisHoldTimer += Time.deltaTime;
+
+            if (axisHoldTimer >= axisHoldTime)
+            {
+                SceneManager.LoadScene(mainMenuSceneName);
+            }
+        }
+        else
+        {
+            axisHoldTimer = 0f;
         }
     }
 
@@ -83,9 +106,7 @@ public class BeachMove : MonoBehaviour
         Vector3 direction = Camera.main.transform.forward;
         direction.y = 0f;
 
-        characterController.Move(
-            direction.normalized * moveSpeed * Time.deltaTime
-        );
+        characterController.Move(direction.normalized * moveSpeed * Time.deltaTime);
     }
 
     void SnapTurn(float angle)
