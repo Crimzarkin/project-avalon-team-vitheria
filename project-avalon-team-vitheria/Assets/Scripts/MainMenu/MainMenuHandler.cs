@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 
 public class MainMenuHandler : MonoBehaviour
@@ -11,7 +11,10 @@ public class MainMenuHandler : MonoBehaviour
     private InputDevice controller;
     private Canvas menuCanvas = null;
     private Canvas loadingCanvas = null;
-
+    public Text loadingText;
+    public float loadingSpeed = 0.5f;
+    private string baseText = "Loading";
+    private int dotCount = 0;
 
     void Start()
     {
@@ -30,6 +33,17 @@ public class MainMenuHandler : MonoBehaviour
         }
         menuCanvas.enabled = false;
         loadingCanvas.enabled = true;
+        StartCoroutine(AnimateLoading());
         SceneManager.LoadSceneAsync(sceneName);
     }
+    IEnumerator AnimateLoading()
+    {
+        while (true)
+        {
+            loadingText.text = baseText + new string('.', dotCount);
+            dotCount = (dotCount + 1) % 4;
+            yield return new WaitForSeconds(loadingSpeed);
+        }
+    }
+
 }
