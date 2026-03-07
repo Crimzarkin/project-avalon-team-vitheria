@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class RightHandPaintInteractor : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class RightHandPaintInteractor : MonoBehaviour
     public static Color selectedColor = Color.black;
 
     private ColorObject currentHoveredColorObject;
+
+    // --------- Main Menu Hold Variables ----------
+    public float mainMenuHoldTime = 2f;   // Time to hold thumbstick to return
+    private float axisHoldTimer = 0f;
+    public string mainMenuSceneName = "MainMenu";
 
     void Start()
     {   
@@ -30,19 +36,20 @@ public class RightHandPaintInteractor : MonoBehaviour
 
     void Update()
     {
-        //Retry controller aquisition if invalid
+        // Retry controller acquisition if invalid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
+        // ---------- Trigger Button for Painting ----------
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
-        //Raycast hit
+        // Raycast hit
         RaycastHit hit;
         bool hasHit = rayInteractor.GetCurrentRaycastHit(out hit);
 
         if (hasHit)
         {
-            //Highlight palette color objects
+            // Highlight palette color objects
             ColorObject hitColorObj = hit.collider.GetComponent<ColorObject>();
             if (hitColorObj != currentHoveredColorObject)
             {
@@ -55,24 +62,23 @@ public class RightHandPaintInteractor : MonoBehaviour
                 currentHoveredColorObject = hitColorObj;
             }
 
-            //If Trigger just pressed Then Select color
+            // If Trigger just pressed → select color
             if (triggerPressed && !lastTriggerState && hitColorObj != null)
             {
                 selectedColor = hitColorObj.color;
                 Debug.Log("Selected color: " + selectedColor);
             }
 
-            //If Trigger held Then Paint on canvas
+            // If Trigger held → paint on canvas
             PaintCanvas canvas = hit.collider.GetComponent<PaintCanvas>();
             if (triggerPressed && canvas != null)
             {
-                canvas.Paint(hit, selectedColor); // pass the RaycastHit
-
+                canvas.Paint(hit, selectedColor);
             }
         }
         else
         {
-            //remove highlight
+            // Remove highlight
             if (currentHoveredColorObject != null)
             {
                 currentHoveredColorObject.Highlight(false);
@@ -81,5 +87,21 @@ public class RightHandPaintInteractor : MonoBehaviour
         }
 
         lastTriggerState = triggerPressed;
+
+        // ---------- Hold Thumbstick to Return to Main Menu ----------
+        bool axisPressed = false;
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out axisPressed) && axisPressed)
+        {
+            axisHoldTimer += Time.deltaTime;
+
+            if (axisHoldTimer >= mainMenuHoldTime)
+            {
+                SceneManager.LoadScene(mainMenuSceneName);
+            }
+        }
+        else
+        {
+            axisHoldTimer = 0f;
+        }
     }
 }
