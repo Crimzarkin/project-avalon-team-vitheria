@@ -1915,7 +1915,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5066,7 +5066,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 91552212}
-  - {fileID: 1610679746}
+  - {fileID: 1556535031}
   - {fileID: 1667726751}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -5176,6 +5176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28ab203a6204400b853fcf56294ef10b, type: 3}
+--- !u!4 &1556535031 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1556535030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1566093863
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,12 +5339,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603624140}
   m_Mesh: {fileID: -2432090755550338912, guid: c6e0c0f69ab8a7c4cb6ab797262d76aa, type: 3}
---- !u!4 &1610679746 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1253252997495286169, guid: 28ab203a6204400b853fcf56294ef10b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1556535030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1667726748
 GameObject:
   m_ObjectHideFlags: 0
