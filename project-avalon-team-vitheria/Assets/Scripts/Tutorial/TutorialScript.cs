@@ -19,7 +19,9 @@ public class TutorialScript : MonoBehaviour
         tutorialScreen.SetActive(true);
     }
     void Update() {
-        Vector3 newPos = player.position + player.forward * TuiDistance + Vector3.up * TuiHeight;
+
+        Vector3 newPos = player.position + (player.forward * TuiDistance) + (Vector3.up * TuiHeight) + (player.right * -2.0f);
+      
                 tutorialScreen.transform.position = newPos;
                 tutorialScreen.transform.localScale = new Vector3(TuiScale, TuiScale, TuiScale);
                 tutorialScreen.transform.LookAt(player);
