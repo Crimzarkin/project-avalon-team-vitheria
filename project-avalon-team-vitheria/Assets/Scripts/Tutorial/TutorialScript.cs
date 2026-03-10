@@ -20,11 +20,12 @@ public class TutorialScript : MonoBehaviour
     }
     void Update() {
 
-        Vector3 newPos = player.position + (player.forward * TuiDistance) + (Vector3.up * TuiHeight) + (player.right * -2.0f);
+        Vector3 newPos = player.position + (player.forward * TuiDistance) + (Vector3.up * TuiHeight) + (player.right * -1.25f);
       
                 tutorialScreen.transform.position = newPos;
                 tutorialScreen.transform.localScale = new Vector3(TuiScale, TuiScale, TuiScale);
-               
+                tutorialScreen.transform.rotation = player.rotation;
+                tutorialScreen.transform.Rotate(0, 180, 0); 
       
     }
     
