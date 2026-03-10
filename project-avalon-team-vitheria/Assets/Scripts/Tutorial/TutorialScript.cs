@@ -4,7 +4,7 @@ using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class TutorialPopUpHandler : MonoBehaviour
+public class TutorialScript : MonoBehaviour
 {
     public Transform player;
     public XRNode controllerNode = XRNode.RightHand;

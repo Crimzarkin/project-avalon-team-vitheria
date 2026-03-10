@@ -23314,6 +23314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f547a9d42ae0ec4c96f875c6053fb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 115310430}
+  controllerNode: 5
+  toggleButton: {fileID: 0}
+  tutorialScreen: {fileID: 1060792981}
 --- !u!1001 &1777866570
 PrefabInstance:
   m_ObjectHideFlags: 0
