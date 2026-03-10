@@ -11,8 +11,8 @@ public class TutorialScript : MonoBehaviour
     public Button toggleButton;
     public GameObject tutorialScreen;
     private float TuiDistance = 4.0f;
-    private float TuiScale = 0.01f;
-    private float TuiHeight = 1.5f;
+    private float TuiScale = 0.005f;
+    private float TuiHeight = 1.0f;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class TutorialScript : MonoBehaviour
       
                 tutorialScreen.transform.position = newPos;
                 tutorialScreen.transform.localScale = new Vector3(TuiScale, TuiScale, TuiScale);
-                tutorialScreen.transform.LookAt(player);
+               
       
     }
     
