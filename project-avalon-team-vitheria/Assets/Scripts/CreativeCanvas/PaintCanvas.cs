@@ -53,4 +53,35 @@ public class PaintCanvas : MonoBehaviour
         texture.Apply();
     }
 
+    public void ClearCanvas(Color clearColor)
+    {
+        Color[] fill = new Color[textureSize * textureSize];
+
+        for (int i = 0; i < fill.Length; i++)
+            fill[i] = clearColor;
+
+        texture.SetPixels(fill);
+        texture.Apply();
+    }
+
+    public void LoadImage(Texture2D image)
+    {
+        texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
+
+        for (int x = 0; x < textureSize; x++)
+        {
+            for (int y = 0; y < textureSize; y++)
+            {
+                Color col = image.GetPixelBilinear(
+                    (float)x / textureSize,
+                    (float)y / textureSize);
+
+                texture.SetPixel(x, y, col);
+            }
+        }
+
+        texture.Apply();
+        rend.material.mainTexture = texture;
+    }
+
 }
