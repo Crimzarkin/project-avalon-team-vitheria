@@ -10,22 +10,27 @@ public class TutorialScript : MonoBehaviour
     public XRNode controllerNode = XRNode.RightHand;
     public Button toggleButton;
     public GameObject tutorialScreen;
-    private float TuiDistance = 4.0f;
+    public GameObject ButtonObject;
+    private float TuiDistance = 3.0f; //Distance from the screen
     private float TuiScale = 0.005f;
-    private float TuiHeight = 1.0f;
+    private float TuiHeight = 0.0f; // 0 for center, -1 for top
 
     void Start()
     {
-        tutorialScreen.SetActive(true);
+
+        tutorialScreen.SetActive(false);
+        ButtonObject.SetActive(true);
+        
     }
     void Update() {
 
-        Vector3 newPos = player.position + (player.forward * TuiDistance) + (Vector3.up * TuiHeight) + (player.right * -1.25f);
+        Vector3 newPos = player.position + (player.forward * TuiDistance) + (Vector3.up * TuiHeight) + (player.right * 0); // -0.75f TOP RIGHT,
       
                 tutorialScreen.transform.position = newPos;
-                tutorialScreen.transform.localScale = new Vector3(TuiScale, TuiScale, TuiScale);
+                tutorialScreen.transform.localScale = new Vector3(TuiScale * 2, TuiScale, TuiScale);
                 tutorialScreen.transform.rotation = player.rotation;
-                tutorialScreen.transform.Rotate(0, 180, 0); 
+                //tutorialScreen.transform.Rotate(20, 160, 0); //Top right
+                tutorialScreen.transform.Rotate(0, 180, 0); // Center
       
     }
     
