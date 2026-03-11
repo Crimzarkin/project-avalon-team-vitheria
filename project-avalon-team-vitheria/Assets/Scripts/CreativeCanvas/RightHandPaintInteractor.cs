@@ -75,6 +75,12 @@ public class RightHandPaintInteractor : MonoBehaviour
             {
                 canvas.Paint(hit, selectedColor);
             }
+
+            ToolButton tool = hit.collider.GetComponent<ToolButton>();
+            if (triggerPressed && !lastTriggerState && tool != null)
+            {
+                tool.Activate();
+            }
         }
         else
         {
