@@ -97,17 +97,22 @@ public class BuildSystem : MonoBehaviour
             ZoneObject)
         {
             Vector3 spawnPosition;
-            
+
             if (hitInfo.transform.CompareTag("Block"))
             {
                 spawnPosition = hitInfo.point + hitInfo.normal * blockSize;
+                spawnPosition = new Vector3( 
+                    Mathf.RoundToInt(spawnPosition.x),
+                    Mathf.RoundToInt(spawnPosition.y),
+                    Mathf.RoundToInt(spawnPosition.z)
+                );
             }
             else
             {
                 spawnPosition = new Vector3(
-                    Mathf.Round(hitInfo.point.x / blockSize) * blockSize,
-                    Mathf.Round(hitInfo.point.y / blockSize) * blockSize,
-                    Mathf.Round(hitInfo.point.z / blockSize) * blockSize
+                    Mathf.RoundToInt(hitInfo.point.x / blockSize) * blockSize,
+                    Mathf.RoundToInt(hitInfo.point.y / blockSize) * blockSize,
+                    Mathf.RoundToInt(hitInfo.point.z / blockSize) * blockSize
                 );
             }
 
