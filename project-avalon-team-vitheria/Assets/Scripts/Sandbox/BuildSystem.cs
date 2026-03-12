@@ -100,7 +100,7 @@ public class BuildSystem : MonoBehaviour
 
             if (hitInfo.transform.CompareTag("Block"))
             {
-                spawnPosition = hitInfo.point + hitInfo.normal * blockSize;
+                spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
                 spawnPosition = new Vector3( 
                     Mathf.RoundToInt(spawnPosition.x),
                     Mathf.RoundToInt(spawnPosition.y),
@@ -116,7 +116,8 @@ public class BuildSystem : MonoBehaviour
                 );
             }
 
-            Instantiate(block, spawnPosition, Quaternion.identity, parent);
+            GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
+            blockInstance.tag = "Block";
         }
     }
 
