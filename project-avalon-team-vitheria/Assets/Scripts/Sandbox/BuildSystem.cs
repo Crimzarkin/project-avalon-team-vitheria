@@ -31,6 +31,7 @@ public class BuildSystem : MonoBehaviour
 
     // <-- Missing variable added
     private bool waitingForSecondPress = false;
+    private float blockSize = 0.5f;
 
     void Start()
     {
@@ -96,21 +97,17 @@ public class BuildSystem : MonoBehaviour
             ZoneObject)
         {
             Vector3 spawnPosition;
-
+            
             if (hitInfo.transform.CompareTag("Block"))
-            {spawnPosition = hitInfo.point + hitInfo.normal * 0.5f;
-                spawnPosition = new Vector3( 
-                    Mathf.RoundToInt(spawnPosition.x),
-                    Mathf.RoundToInt(spawnPosition.y),
-                    Mathf.RoundToInt(spawnPosition.z)
-                );
+            {
+                spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
             }
             else
             {
                 spawnPosition = new Vector3(
-                    Mathf.RoundToInt(hitInfo.point.x),
-                    Mathf.RoundToInt(hitInfo.point.y),
-                    Mathf.RoundToInt(hitInfo.point.z)
+                    Mathf.Round(hitInfo.point.x / blockSize) * blockSize,
+                    Mathf.Round(hitInfo.point.y / blockSize) * blockSize,
+                    Mathf.Round(hitInfo.point.z / blockSize) * blockSize
                 );
             }
 
@@ -119,9 +116,10 @@ public class BuildSystem : MonoBehaviour
     }
 
     public void ResetBlocks()
-    {
-        foreach (Transform child in parent)
-            Destroy(child.gameObject);
+    {   
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
+        foreach (GameObject block in blocks)
+            Destroy(block);
     }
 
     void DestroyBlock()
