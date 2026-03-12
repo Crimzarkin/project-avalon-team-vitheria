@@ -105,7 +105,7 @@ public class BuildSystem : MonoBehaviour
             }
             else if (hitInfo.transform.CompareTag("Block"))
             {
-                spawnPosition = hitInfo.point + hitInfo.normal * blockSize;
+                spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
             }
             else
             {
