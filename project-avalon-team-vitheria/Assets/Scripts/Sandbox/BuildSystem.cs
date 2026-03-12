@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR;
@@ -97,14 +98,18 @@ public class BuildSystem : MonoBehaviour
             ZoneObject)
         {
             Vector3 spawnPosition;
-
-            if (hitInfo.transform.CompareTag("Block"))
+            
+            if (hitInfo.transform.GetComponent<TerrainCollider>() != null)
+            {
+                spawnPosition = hitInfo.point + Vector3.up * blockSize;
+            }
+            else if (hitInfo.transform.CompareTag("Block"))
             {
                 spawnPosition = hitInfo.point + hitInfo.normal * blockSize;
             }
             else
             {
-                spawnPosition = hitInfo.point;
+                return;
             }
 
             spawnPosition = new Vector3(
@@ -112,6 +117,7 @@ public class BuildSystem : MonoBehaviour
                     Mathf.Round(spawnPosition.y / blockSize) * blockSize,
                     Mathf.Round(spawnPosition.z / blockSize) * blockSize
             );
+            
             GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
             blockInstance.tag = "Block";
         }
