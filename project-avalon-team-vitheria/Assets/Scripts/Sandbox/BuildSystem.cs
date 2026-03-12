@@ -108,9 +108,9 @@ public class BuildSystem : MonoBehaviour
             }
 
             spawnPosition = new Vector3(
-                    Mathf.RoundToInt(spawnPosition.x / blockSize) * blockSize,
-                    Mathf.RoundToInt(spawnPosition.y / blockSize) * blockSize,
-                    Mathf.RoundToInt(spawnPosition.z / blockSize) * blockSize
+                    Mathf.Round(spawnPosition.x / blockSize) * blockSize,
+                    Mathf.Round(spawnPosition.y / blockSize) * blockSize,
+                    Mathf.Round(spawnPosition.z / blockSize) * blockSize
             );
             GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
             blockInstance.tag = "Block";
