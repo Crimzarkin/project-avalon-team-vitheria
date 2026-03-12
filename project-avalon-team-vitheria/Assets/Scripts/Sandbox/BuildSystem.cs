@@ -100,22 +100,18 @@ public class BuildSystem : MonoBehaviour
 
             if (hitInfo.transform.CompareTag("Block"))
             {
-                spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
-                spawnPosition = new Vector3( 
-                    Mathf.RoundToInt(spawnPosition.x),
-                    Mathf.RoundToInt(spawnPosition.y),
-                    Mathf.RoundToInt(spawnPosition.z)
-                );
+                spawnPosition = hitInfo.point + hitInfo.normal * blockSize;
             }
             else
             {
-                spawnPosition = new Vector3(
-                    Mathf.RoundToInt(hitInfo.point.x / blockSize) * blockSize,
-                    Mathf.RoundToInt(hitInfo.point.y / blockSize) * blockSize,
-                    Mathf.RoundToInt(hitInfo.point.z / blockSize) * blockSize
-                );
+                spawnPosition = hitInfo.point;
             }
 
+            spawnPosition = new Vector3(
+                    Mathf.RoundToInt(spawnPosition.x / blockSize) * blockSize,
+                    Mathf.RoundToInt(spawnPosition.y / blockSize) * blockSize,
+                    Mathf.RoundToInt(spawnPosition.z / blockSize) * blockSize
+            );
             GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
             blockInstance.tag = "Block";
         }
@@ -125,7 +121,9 @@ public class BuildSystem : MonoBehaviour
     {   
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         foreach (GameObject block in blocks)
+        {
             Destroy(block);
+        }
     }
 
     void DestroyBlock()
