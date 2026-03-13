@@ -55,7 +55,7 @@ public class ToolButton : MonoBehaviour
                 break;
 
             case ToolType.ArtPiece:
-                canvas.SetCanvasTexture(artImage);;
+                canvas.LoadImageAsWritableCopy(artImage);
                 break;
         }
     }
