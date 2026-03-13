@@ -276,9 +276,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 924954281025890674, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 924954281095554048, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924954281095554048, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924954281095554055, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
@@ -299,6 +309,11 @@ PrefabInstance:
     - target: {fileID: 924954281412171216, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924954281412171216, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924954281412171223, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
@@ -336,6 +351,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 924954282322151098, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 924954282331637998, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -354,6 +374,11 @@ PrefabInstance:
     - target: {fileID: 924954282331637999, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924954282331637999, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924954282420149156, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
@@ -376,6 +401,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 924954282420149157, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 924954282446432716, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,9 +426,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 924954282446432717, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 924954282479663876, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924954282479663876, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924954282479663883, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
@@ -490,6 +530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PaletteColours
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221107122758763115, guid: 32b9ce61fdc38bb479e3642b9f46fd22,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9ce61fdc38bb479e3642b9f46fd22, type: 3}
@@ -609,7 +654,7 @@ GameObject:
   - component: {fileID: 441644982}
   - component: {fileID: 441644981}
   - component: {fileID: 441644980}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Whitepaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +871,7 @@ GameObject:
   - component: {fileID: 602090511}
   - component: {fileID: 602090510}
   - component: {fileID: 602090509}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Orangepaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +979,7 @@ GameObject:
   - component: {fileID: 638047259}
   - component: {fileID: 638047258}
   - component: {fileID: 638047257}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Blackpaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1137,7 @@ GameObject:
   - component: {fileID: 742587931}
   - component: {fileID: 742587930}
   - component: {fileID: 742587929}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Purplepaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1245,7 @@ GameObject:
   - component: {fileID: 939768828}
   - component: {fileID: 939768827}
   - component: {fileID: 939768826}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Redpaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1353,7 @@ GameObject:
   - component: {fileID: 944328294}
   - component: {fileID: 944328293}
   - component: {fileID: 944328292}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Bluepaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1844,7 +1889,7 @@ GameObject:
   - component: {fileID: 1105851858}
   - component: {fileID: 1105851857}
   - component: {fileID: 1105851856}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Greenpaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,7 +1997,7 @@ GameObject:
   - component: {fileID: 1185262122}
   - component: {fileID: 1185262121}
   - component: {fileID: 1185262120}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Brownpaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2057,9 +2102,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1233078583}
   - component: {fileID: 1233078586}
+  - component: {fileID: 1233078588}
   - component: {fileID: 1233078585}
   - component: {fileID: 1233078584}
-  - component: {fileID: 1233078588}
   - component: {fileID: 1233078587}
   m_Layer: 0
   m_Name: RightHand Controller
@@ -2341,7 +2386,7 @@ MonoBehaviour:
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
   m_LineType: 0
-  m_MaxRaycastDistance: 30
+  m_MaxRaycastDistance: 2000
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
   m_Acceleration: 9.8
@@ -2425,7 +2470,7 @@ GameObject:
   - component: {fileID: 1373527251}
   - component: {fileID: 1373527250}
   - component: {fileID: 1373527249}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Yellowpaint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
