@@ -2,7 +2,7 @@
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class VRExitToMainMenu_OculusGo : MonoBehaviour
+public class StarGazeRightHandController : MonoBehaviour
 {
     [Header("Settings")]
     public float holdTime = 2f;              // Seconds to hold thumbstick
