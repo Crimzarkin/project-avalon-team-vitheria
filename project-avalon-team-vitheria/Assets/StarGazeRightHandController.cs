@@ -2,7 +2,7 @@
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class VRExitToMainMenu : MonoBehaviour
+public class StarGazeRightHandController : MonoBehaviour
 {
     public XRNode controllerNode = XRNode.RightHand; // Which controller to check
     public string mainMenuSceneName = "MainMenu";    // Scene to load
