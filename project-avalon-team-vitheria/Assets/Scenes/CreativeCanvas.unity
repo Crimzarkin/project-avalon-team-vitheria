@@ -3113,6 +3113,8 @@ MonoBehaviour:
   tool: 3
   artImage: {fileID: 2800000, guid: 27f9610a40b196149911da539d06de5c, type: 3}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
 --- !u!64 &290114138798618697
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3331,6 +3333,8 @@ MonoBehaviour:
   tool: 0
   artImage: {fileID: 0}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
 --- !u!1 &1598952738896334820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,6 +3370,8 @@ MonoBehaviour:
   tool: 3
   artImage: {fileID: 2800000, guid: 2e30bdbfcd0fa2c469e61dde68dde09a, type: 3}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
 --- !u!64 &1598952738896334822
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4162,6 +4168,8 @@ MonoBehaviour:
   tool: 3
   artImage: {fileID: 2800000, guid: 841fe5c75a8de3943aae7a39010591cf, type: 3}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
 --- !u!64 &7450435578600438135
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4304,6 +4312,8 @@ MonoBehaviour:
   tool: 3
   artImage: {fileID: 2800000, guid: bf88445b0ae8c8c46b85e93cdb2928a8, type: 3}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
 --- !u!64 &7765030575172295612
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4554,6 +4564,8 @@ MonoBehaviour:
   tool: 2
   artImage: {fileID: 0}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
 --- !u!64 &9179517344266078733
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4616,3 +4628,5 @@ MonoBehaviour:
   tool: 1
   artImage: {fileID: 0}
   canvas: {fileID: 1504587671}
+  highlightMaterial: {fileID: -6974606749012444556, guid: 71743a68d025eab4d8fe0f5daecd7ef7,
+    type: 3}
