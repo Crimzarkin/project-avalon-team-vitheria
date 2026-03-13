@@ -2,11 +2,12 @@
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class StarGazeRightHandController : MonoBehaviour
+public class VRExitToMainMenu_OculusGo : MonoBehaviour
 {
-    public XRNode controllerNode = XRNode.RightHand; // Which controller to check
-    public string mainMenuSceneName = "MainMenu";    // Scene to load
-    public float holdTime = 2f;                      // Seconds to hold
+    [Header("Settings")]
+    public float holdTime = 2f;              // Seconds to hold thumbstick
+    public string mainMenuSceneName = "MainMenu"; 
+    public XRNode controllerNode = XRNode.RightHand; // Controller to track
 
     private float holdTimer = 0f;
     private InputDevice controller;
@@ -14,33 +15,34 @@ public class StarGazeRightHandController : MonoBehaviour
     void Start()
     {
         controller = InputDevices.GetDeviceAtXRNode(controllerNode);
-        Debug.Log($"VRExitToMainMenu started. Controller valid: {controller.isValid}");
     }
 
     void Update()
     {
- 
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(controllerNode);
 
         if (!controller.isValid)
-            return; 
+            return;
 
         bool axisPressed = false;
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out axisPressed) && axisPressed)
         {
             holdTimer += Time.deltaTime;
-
-
             if (holdTimer >= holdTime)
             {
-                Debug.Log("Loading main menu...");
-                SceneManager.LoadScene(mainMenuSceneName);
+                LoadMainMenu();
             }
         }
         else
         {
-            holdTimer = 0f; 
+            holdTimer = 0f; // Reset if released
         }
+    }
+
+    private void LoadMainMenu()
+    {
+        Debug.Log("Loading Main Menu...");
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }
