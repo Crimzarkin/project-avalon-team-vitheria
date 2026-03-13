@@ -15,6 +15,9 @@ public class PlayerSnapTurning : MonoBehaviour
     private InputDevice controller;
 
     private bool triggerPressed = false;
+    private float axisHoldTimer = 0f;  // Tracks how long the thumbstick is held
+    public float holdTime = 2f;        // Seconds to hold before exiting
+    public string mainMenuSceneName = "MainMenu"; // Scene to load
 
     // Touchpad axis
     private Vector2 axis;
