@@ -2,40 +2,46 @@
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class CoralReefRController : MonoBehaviour
+public class VRExitToMainMenu : MonoBehaviour
 {
-    public float mainMenuHoldTime = 2f; // Seconds to hold the thumbstick
-    public string mainMenuSceneName = "MainMenu";
+    public XRNode controllerNode = XRNode.RightHand; // controller
+    public string mainMenuSceneName = "MainMenu";    // Scene to load
+    public float holdTime = 2f;                      // Seconds to hold
 
-    private float axisHoldTimer = 0f;
+    private float holdTimer = 0f;
     private InputDevice controller;
 
     void Start()
     {
-        controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-        Debug.Log("CoralReefRController started, controller valid: " + controller.isValid);
+        controller = InputDevices.GetDeviceAtXRNode(controllerNode);
+        Debug.Log($"VRExitToMainMenu started. Controller valid: {controller.isValid}");
     }
 
     void Update()
     {
-        // Retry controller acquisition if invalid
+        // Retry controller if invalid
         if (!controller.isValid)
-            controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            controller = InputDevices.GetDeviceAtXRNode(controllerNode);
 
-        // Check primary 2D axis (thumbstick) press
+        if (!controller.isValid)
+            return; // No valid controller
+
         bool axisPressed = false;
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out axisPressed) && axisPressed)
         {
-            axisHoldTimer += Time.deltaTime;
+            holdTimer += Time.deltaTime;
+            // Optional debug
+            // Debug.Log($"Thumbstick held: {holdTimer:F2}s");
 
-            if (axisHoldTimer >= mainMenuHoldTime)
+            if (holdTimer >= holdTime)
             {
+                Debug.Log("Loading main menu...");
                 SceneManager.LoadScene(mainMenuSceneName);
             }
         }
         else
         {
-            axisHoldTimer = 0f; // Reset timer if released
+            holdTimer = 0f; // Reset timer when released
         }
     }
 }
