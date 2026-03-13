@@ -89,4 +89,23 @@ public class PaintCanvas : MonoBehaviour
         rend.material.mainTexture = texture;
     }
 
+    public void LoadImageAsWritableCopy(Texture2D sourceImage)
+{
+    texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
+    texture.filterMode = FilterMode.Point;
+    for (int x = 0; x < textureSize; x++)
+    {
+        for (int y = 0; y < textureSize; y++)
+        {
+            Color col = sourceImage.GetPixelBilinear(
+                (float)x / textureSize,
+                (float)y / textureSize);
+            texture.SetPixel(x, y, col);
+        }
+    }
+
+    texture.Apply();
+    rend.material.mainTexture = texture;
+}
+
 }
