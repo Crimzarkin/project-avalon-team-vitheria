@@ -83,5 +83,10 @@ public class PaintCanvas : MonoBehaviour
         texture.Apply();
         rend.material.mainTexture = texture;
     }
+    public void SetCanvasTexture(Texture2D newTexture)
+    {
+        texture = newTexture;
+        rend.material.mainTexture = texture;
+    }
 
 }
