@@ -1217,7 +1217,7 @@ MonoBehaviour:
 
 
     1. Aim at the blue squares and press
-    the trigger button to instantly go to that location'
+    the "trigger" button to instantly go to that location.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ceb89c4f6c894ce4bae53e40debcca10, type: 2}
@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 2.490711, z: 7.6313744, w: -4.356312}
   m_textInfo:
     textComponent: {fileID: 196253531}
-    characterCount: 115
+    characterCount: 118
     spriteCount: 0
     spaceCount: 22
     wordCount: 22
@@ -7647,7 +7647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -704, y: 241}
+  m_AnchoredPosition: {x: -704, y: 352}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872385608
@@ -7670,11 +7670,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Lastly, to change the screen showing the stars, point at the small wall
-    panel located right on the side of the telescope.
+    panel located right on the side of the telescope and press it.
 
 
-    That is all! Enjoy the
-    scene!'
+    That is
+    all! Enjoy the scene!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ceb89c4f6c894ce4bae53e40debcca10, type: 2}
@@ -7743,12 +7743,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 2.490711, z: 7.6313744, w: -4.356312}
   m_textInfo:
     textComponent: {fileID: 1872385608}
-    characterCount: 152
+    characterCount: 165
     spriteCount: 0
-    spaceCount: 28
-    wordCount: 28
+    spaceCount: 31
+    wordCount: 31
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -8303,8 +8303,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-    2. There is also the option to hold the trigger button to move forward
-    in the direction you are pointing. '
+    2. There is also the option to hold the "trigger" button to move
+    forward in the direction you are pointing. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ceb89c4f6c894ce4bae53e40debcca10, type: 2}
@@ -8373,7 +8373,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 2.490711, z: 7.6313744, w: -4.356312}
   m_textInfo:
     textComponent: {fileID: 2016575258}
-    characterCount: 107
+    characterCount: 109
     spriteCount: 0
     spaceCount: 21
     wordCount: 21
