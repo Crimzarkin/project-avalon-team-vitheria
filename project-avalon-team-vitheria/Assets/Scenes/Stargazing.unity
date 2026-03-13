@@ -6029,9 +6029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc46a969c6636e45bb94b7fe7cbb0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerNode: 5
-  mainMenuSceneName: MainMenu
   holdTime: 2
+  mainMenuSceneName: MainMenu
+  controllerNode: 5
 --- !u!1 &1390267745
 GameObject:
   m_ObjectHideFlags: 0
