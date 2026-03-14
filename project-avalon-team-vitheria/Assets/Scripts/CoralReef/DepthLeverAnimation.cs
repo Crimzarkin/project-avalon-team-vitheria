@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class DepthLeverAnimation : MonoBehaviour
 {
+    [SerializeField] private Animator leverAnimator;
 
-    bool Forward;
-    bool Reverse;
-    Oculus
-    // Start is called before the first frame update
-    void Start()
+    public void forwardLever()
     {
-        
+        leverAnimator.SetBool("Forward", true);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void backwardLever()
     {
-        
+        leverAnimator.SetBool("Backward", true);
+    }
+    public void resetLever()
+    {
+        leverAnimator.SetBool("Forward", false);
+        leverAnimator.SetBool("Backward", false);
     }
 }

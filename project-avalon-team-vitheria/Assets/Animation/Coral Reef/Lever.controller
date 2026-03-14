@@ -59,7 +59,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Reverse
+    m_ConditionEvent: Backward
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8406772190814482153}
@@ -84,7 +84,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Reverse
+    m_ConditionEvent: Backward
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Forward
@@ -115,7 +115,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Forward
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Reverse
+    m_ConditionEvent: Backward
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7244917751534180591}
@@ -202,7 +202,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Reverse
+  - m_Name: Backward
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -233,7 +233,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Forward
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Reverse
+    m_ConditionEvent: Backward
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7244917751534180591}
@@ -314,7 +314,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Reverse
+    m_ConditionEvent: Backward
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5989323348486331994}
@@ -366,7 +366,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Reverse
+    m_ConditionEvent: Backward
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Forward
