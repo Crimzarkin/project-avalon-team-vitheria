@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.Oculus.Input;
 using UnityEngine;
 
 public class DepthLeverAnimation : MonoBehaviour
@@ -7,6 +8,7 @@ public class DepthLeverAnimation : MonoBehaviour
 
     bool Forward;
     bool Reverse;
+    Oculus
     // Start is called before the first frame update
     void Start()
     {
