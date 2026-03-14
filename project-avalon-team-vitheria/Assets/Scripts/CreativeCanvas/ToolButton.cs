@@ -15,9 +15,30 @@ public class ToolButton : MonoBehaviour
 
     public PaintCanvas canvas;
 
+    public Material highlightMaterial;
+
+    private Renderer rend;
+    private Material originalMaterial;
+
+    void Awake()
+    {
+        rend = GetComponent<Renderer>();
+        originalMaterial = rend.material;
+    }
+
+    public void Highlight(bool enable)
+    {
+        if (enable)
+            rend.material = highlightMaterial;
+        else
+            rend.material = originalMaterial;
+    }
+
     public void Activate()
     {
         if (canvas == null) return;
+
+        Debug.Log("Activated tool: " + tool);
 
         switch (tool)
         {
@@ -34,7 +55,7 @@ public class ToolButton : MonoBehaviour
                 break;
 
             case ToolType.ArtPiece:
-                canvas.LoadImage(artImage);
+                canvas.LoadImageAsWritableCopy(artImage);
                 break;
         }
     }
