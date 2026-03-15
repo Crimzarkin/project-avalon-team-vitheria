@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class TreasureSpawner : MonoBehaviour
@@ -8,10 +10,11 @@ public class TreasureSpawner : MonoBehaviour
     private Transform[] spawnPoints;
     [SerializeField] private GameObject[] treasurePrefabs;
     [SerializeField] private int treasureAmount;
+
+
     // Start is called before the first frame update
     void Start()
     {
-    
         populateSpawnPoints();
         generateTreasure(treasureAmount);
     }
@@ -24,7 +27,6 @@ public class TreasureSpawner : MonoBehaviour
         int treasurePosition;
         int treasurePrefabSelector;
         int nullVal = -1;
-        
         // Sets array values to -1 to allow 0 to be a unique value for possible positions
         for (int pos = 0; pos < amount; pos++)
         {
@@ -57,5 +59,6 @@ public class TreasureSpawner : MonoBehaviour
         {
             spawnPoints[spawnPoint] = spawnPointObjects[spawnPoint].transform;
         }
+        GameObject.Find("HUD").GetComponent<TreasureCounterHUD>().setcounterText(treasureAmount);
     }
 }
