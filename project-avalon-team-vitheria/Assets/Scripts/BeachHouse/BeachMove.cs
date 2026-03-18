@@ -3,7 +3,7 @@ using UnityEngine.XR;
 
 public class BeachMove : MonoBehaviour
 {
-    private float moveSpeed = 20.0f;
+    private float moveSpeed = 14.0f;
     float stepHeight = 1f;        // max height you can step up
     float floatDownSpeed = 3f;    // how fast you float down
     float groundCheckDistance = 0.1f;
