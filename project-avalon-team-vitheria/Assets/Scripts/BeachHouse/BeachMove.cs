@@ -1,38 +1,37 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.SceneManagement;
 
 public class BeachMove : MonoBehaviour
 {
-    private float moveSpeed = 5.0f;
+    private float moveSpeed = 20.0f;
+    float stepHeight = 1f;        // max height you can step up
+    float floatDownSpeed = 3f;    // how fast you float down
+    float groundCheckDistance = 0.1f;
     private float snapTurnAngle = 15f;
 
     private float triggerHoldTime = 0f;
     private float requiredHoldTime = 0.8f;
 
     private InputDevice controller;
+
     private bool triggerPressed = false;
 
+    // Touchpad axis
     private Vector2 axis;
     private bool leftSwipe = false;
     private bool rightSwipe = false;
+
+    // Swipe Detection Threshold
     public float swipeThreshold = 0.6f;
-
-    private CharacterController characterController;
-
-    // ----- Main Menu Hold Variables -----
-    public float axisHoldTime = 2f;
-    private float axisHoldTimer = 0f;
-    public string mainMenuSceneName = "MainMenu";
 
     void Start()
     {
         controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-        characterController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
+        // Keep controller valid
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
@@ -41,23 +40,27 @@ public class BeachMove : MonoBehaviour
 
         if (triggerPressed)
         {
+            // accumulate time while trigger is held
             triggerHoldTime += Time.deltaTime;
 
+            // only move forward if held long enough
             if (triggerHoldTime >= requiredHoldTime)
                 MoveForward();
         }
         else
         {
+            // reset timer when trigger is released
             triggerHoldTime = 0f;
         }
 
-        // ---------- SNAP TURN ----------
+        // ---------- SNAP TURNING ----------
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
         {
-            // Snap turn left
+            // Swipe Left (axis.x < -threshold) → Turn Left
+
             if (axis.x < -swipeThreshold && !leftSwipe)
             {
-                SnapTurn(-snapTurnAngle);
+                SnapTurn(-snapTurnAngle);  // turn right
                 leftSwipe = true;
             }
             else if (axis.x > -swipeThreshold)
@@ -65,10 +68,10 @@ public class BeachMove : MonoBehaviour
                 leftSwipe = false;
             }
 
-            // Snap turn right
+            // Swipe Right (axis.x > +threshold) → Turn Right
             if (axis.x > swipeThreshold && !rightSwipe)
             {
-                SnapTurn(+snapTurnAngle);
+                SnapTurn(+snapTurnAngle);  // turn left
                 rightSwipe = true;
             }
             else if (axis.x < swipeThreshold)
@@ -76,41 +79,43 @@ public class BeachMove : MonoBehaviour
                 rightSwipe = false;
             }
         }
-
-        // ---------- HOLD STICK BUTTON TO RETURN TO MAIN MENU ----------
-        bool axisPressed = false;
-        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out axisPressed) && axisPressed)
-        {
-            axisHoldTimer += Time.deltaTime;
-
-            if (axisHoldTimer >= axisHoldTime)
-            {
-                SceneManager.LoadScene(mainMenuSceneName);
-            }
-        }
-        else
-        {
-            axisHoldTimer = 0f;
-        }
     }
-
-    void LateUpdate()
-    {
-        Vector3 pos = transform.position;
-        pos.y = 7f;
-        transform.position = pos;
-    }
-
     void MoveForward()
     {
         Vector3 direction = Camera.main.transform.forward;
-        direction.y = 0f;
+        direction.y = 0;
+        direction.Normalize();
 
-        characterController.Move(direction.normalized * moveSpeed * Time.deltaTime);
+        Vector3 targetPos = transform.position + direction * moveSpeed * Time.deltaTime;
+
+        // step up check
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, 0.6f)) //Check raycast coming from players body, not controller
+        {
+            // If there's a block in front, try stepping up
+            Vector3 stepCheck = transform.position + Vector3.up * stepHeight;
+
+            // Cast again from higher position
+            if (!Physics.Raycast(stepCheck, direction, 0.6f))
+            {
+                // Free space above → step up
+                targetPos.y += stepHeight;
+            }
+        }
+
+        // float down
+        if (!Physics.Raycast(targetPos + Vector3.up * 0.1f, Vector3.down, groundCheckDistance))
+        {
+            targetPos.y -= floatDownSpeed * Time.deltaTime;
+        }
+
+        transform.position = targetPos;
     }
+
 
     void SnapTurn(float angle)
     {
         transform.Rotate(Vector3.up, angle);
     }
+
+
 }
