@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.SceneManagement;
+
 public class PlayerSnapTurning : MonoBehaviour
 {
    
@@ -16,9 +15,6 @@ public class PlayerSnapTurning : MonoBehaviour
     private InputDevice controller;
 
     private bool triggerPressed = false;
-    private float axisHoldTimer = 0f;  // Tracks how long the thumbstick is held
-    public float holdTime = 2f;        // Seconds to hold before exiting
-    public string mainMenuSceneName = "MainMenu"; // Scene to load
 
     // Touchpad axis
     private Vector2 axis;
@@ -35,49 +31,32 @@ public class PlayerSnapTurning : MonoBehaviour
 
     void Update()
     {
-        // Re-acquire controller if invalid
-        if (!controller.isValid)
-            controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-
-        if (!controller.isValid)
-            return;
-
-        // ---------- SNAP TURN ----------
-        Vector2 axis;
+    
+        // ---------- SNAP TURNING ----------
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
         {
-            // Left swipe
+            // Swipe Left (axis.x < -threshold) → Turn Left
+
             if (axis.x < -swipeThreshold && !leftSwipe)
             {
-                SnapTurn(-snapTurnAngle);
+                SnapTurn(-snapTurnAngle);  // turn right
                 leftSwipe = true;
             }
             else if (axis.x > -swipeThreshold)
+            {
                 leftSwipe = false;
+            }
 
-            // Right swipe
+            // Swipe Right (axis.x > +threshold) → Turn Right
             if (axis.x > swipeThreshold && !rightSwipe)
             {
-                SnapTurn(snapTurnAngle);
+                SnapTurn(+snapTurnAngle);  // turn left
                 rightSwipe = true;
             }
             else if (axis.x < swipeThreshold)
-                rightSwipe = false;
-        }
-
-        // ---------- EXIT TO MAIN MENU ----------
-        bool axisClick = false;
-        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out axisClick) && axisClick)
-        {
-            axisHoldTimer += Time.deltaTime;
-            if (axisHoldTimer >= holdTime)
             {
-                SceneManager.LoadScene(mainMenuSceneName);
+                rightSwipe = false;
             }
-        }
-        else
-        {
-            axisHoldTimer = 0f;
         }
     }
 

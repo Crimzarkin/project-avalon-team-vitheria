@@ -57,22 +57,22 @@ public class Inventory : MonoBehaviour
             {
                 //Add item to an available slot
                 GameObject itemObj = new GameObject("Item");
-                itemObj.transform.SetParent(slot.transform, false);
-                
-                RectTransform rect = itemObj.AddComponent<RectTransform>();
-                rect.anchorMin = new Vector2(0.5f, 0.5f);
-                rect.anchorMax = new Vector2(0.5f, 0.5f);
-                rect.pivot = new Vector2(0.5f, 0.5f);
-                rect.localPosition = Vector3.zero;
-                rect.localScale = Vector3.one;
-                rect.sizeDelta = new Vector2(20, 20);
+                itemObj.transform.SetParent(slot.transform);
+
+                itemObj.AddComponent<InventoryItem>();  
+                itemObj.GetComponent<InventoryItem>().Initialize(item);
+
+                itemObj.AddComponent<RectTransform>();
+                itemObj.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+                itemObj.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+                itemObj.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+                itemObj.GetComponent<RectTransform>().sizeDelta = new Vector2(20, 20);
+                itemObj.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
 
                 itemObj.AddComponent<CanvasRenderer>();
 
-                InventoryItem invItem = itemObj.AddComponent<InventoryItem>();
-                invItem.Initialize(item);
-
                 UpdateSlots();
+                Debug.Log("Item added to slot " + i);
                 return;
             }
         }

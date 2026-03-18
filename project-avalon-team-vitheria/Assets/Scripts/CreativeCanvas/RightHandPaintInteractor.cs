@@ -3,10 +3,8 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
 
-
 public class RightHandPaintInteractor : MonoBehaviour
 {
-    private ToolButton currentHoveredToolButton;
     public XRRayInteractor rayInteractor;
 
     private InputDevice controller;
@@ -51,24 +49,6 @@ public class RightHandPaintInteractor : MonoBehaviour
 
         if (hasHit)
         {
-            ToolButton hitTool = hit.collider.GetComponent<ToolButton>();
-            if (hitTool != currentHoveredToolButton)
-            {
-                if (currentHoveredToolButton != null)
-                    currentHoveredToolButton.Highlight(false);
-
-                if (hitTool != null)
-                    hitTool.Highlight(true);
-
-                currentHoveredToolButton = hitTool;
-            }
-
-            ToolButton tool = hit.collider.GetComponent<ToolButton>();
-            if (triggerPressed && !lastTriggerState && tool != null)
-            {
-                tool.Activate();
-                return;
-            }
             // Highlight palette color objects
             ColorObject hitColorObj = hit.collider.GetComponent<ColorObject>();
             if (hitColorObj != currentHoveredColorObject)
@@ -95,6 +75,12 @@ public class RightHandPaintInteractor : MonoBehaviour
             {
                 canvas.Paint(hit, selectedColor);
             }
+
+            ToolButton tool = hit.collider.GetComponent<ToolButton>();
+            if (triggerPressed && !lastTriggerState && tool != null)
+            {
+                tool.Activate();
+            }
         }
         else
         {
@@ -103,11 +89,6 @@ public class RightHandPaintInteractor : MonoBehaviour
             {
                 currentHoveredColorObject.Highlight(false);
                 currentHoveredColorObject = null;
-            }
-            if (currentHoveredToolButton != null)
-            {
-                currentHoveredToolButton.Highlight(false);
-                currentHoveredToolButton = null;
             }
         }
 
