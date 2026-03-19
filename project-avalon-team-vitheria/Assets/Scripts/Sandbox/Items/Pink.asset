@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ddb262f4e68cb4d9ce687b04f5bf51, type: 3}
   m_Name: Pink
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 74bd6d183e9b3894eaae0166eac91216, type: 3}
+  itemPrefab: {fileID: 5262929200255379843, guid: 1f0556397285600489325811f361eb51,
+    type: 3}

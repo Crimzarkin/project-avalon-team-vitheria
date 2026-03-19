@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98ddb262f4e68cb4d9ce687b04f5bf51, type: 3}
-  m_Name: Driftwood
+  m_Name: Cyan
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5db2002875a43bb4cba24284ae0e0ce3, type: 3}
-  itemPrefab: {fileID: 8226634073544214719, guid: 24d1d97e25f23bb4787dff5035757c5d,
+  sprite: {fileID: 21300000, guid: a96b1a89086f6334780b5aee4b431b7c, type: 3}
+  itemPrefab: {fileID: 5050879212773896185, guid: c7c1b369e6dd4224e92842fef1ab6fcc,
     type: 3}

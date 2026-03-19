@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ddb262f4e68cb4d9ce687b04f5bf51, type: 3}
   m_Name: White
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 90194c6652c7b6048bcb83dd26460467, type: 3}
+  itemPrefab: {fileID: 3111466045406719924, guid: 25baca27365288043a7f1f97ba90e6d5,
+    type: 3}

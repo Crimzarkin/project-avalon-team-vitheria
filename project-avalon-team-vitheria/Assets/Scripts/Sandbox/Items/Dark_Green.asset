@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98ddb262f4e68cb4d9ce687b04f5bf51, type: 3}
-  m_Name: Leaf
+  m_Name: Dark_Green
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5949396834a44bd4790ff907481a34d2, type: 3}
-  itemPrefab: {fileID: 8745439323840817890, guid: 2ea5407508171e5439a678f07d231e0e,
+  sprite: {fileID: 21300000, guid: 5373057c6542d8349820bf0979ff820f, type: 3}
+  itemPrefab: {fileID: 7099297462013127475, guid: 36cb692a37c1c7b41bcb30dd9a3000a0,
     type: 3}
