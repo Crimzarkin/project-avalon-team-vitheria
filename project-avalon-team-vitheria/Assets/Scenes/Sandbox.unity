@@ -6155,8 +6155,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 8d3e5b0b9597da94e8ee31d3aaca2352, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 428832819}
-  oldItemSound: {fileID: 428832820}
+  newItemSound: {fileID: 428832820}
+  oldItemSound: {fileID: 428832819}
 --- !u!82 &428832819
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6167,7 +6167,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 27867b73b2c44874eb590c4ead559998, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5a6b75f72872da345ac4343b370e94f1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6263,7 +6263,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a6b75f72872da345ac4343b370e94f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 27867b73b2c44874eb590c4ead559998, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8923,8 +8923,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 0da3e62e9b9b07747a02fa870ba70e97, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 626157599}
+  oldItemSound: {fileID: 626157598}
 --- !u!65 &626157602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9470,8 +9470,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: e3fc67fe442f1c1459faa66d271c7ef4, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 648808543}
-  oldItemSound: {fileID: 648808544}
+  newItemSound: {fileID: 648808544}
+  oldItemSound: {fileID: 648808543}
 --- !u!82 &648808543
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9482,7 +9482,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 27867b73b2c44874eb590c4ead559998, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5a6b75f72872da345ac4343b370e94f1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9578,7 +9578,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a6b75f72872da345ac4343b370e94f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 27867b73b2c44874eb590c4ead559998, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10076,8 +10076,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 0cb2c8d46e21fd34d847775315fd0ef0, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 651457065}
+  oldItemSound: {fileID: 651457064}
 --- !u!65 &651457068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13166,8 +13166,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: b43ca964035c5b1429f959acfdddf3eb, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 902270986}
+  oldItemSound: {fileID: 902270985}
 --- !u!65 &902270989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15780,8 +15780,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: ba9fef8442f0291458e6934470d60e0e, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 1059222035}
-  oldItemSound: {fileID: 1059222036}
+  newItemSound: {fileID: 1059222036}
+  oldItemSound: {fileID: 1059222035}
 --- !u!82 &1059222035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15792,7 +15792,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 27867b73b2c44874eb590c4ead559998, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5a6b75f72872da345ac4343b370e94f1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -15888,7 +15888,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a6b75f72872da345ac4343b370e94f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 27867b73b2c44874eb590c4ead559998, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -16705,8 +16705,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 00ff94ab1a18527469ab1cb421cccd48, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 1148816375}
+  oldItemSound: {fileID: 1148816374}
 --- !u!65 &1148816378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18392,8 +18392,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: a2d0be22871a357418260029856f1245, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 1272426170}
+  oldItemSound: {fileID: 1272426169}
 --- !u!65 &1272426173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25451,8 +25451,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 0b7d32ac53e9d964ca707e5ba5b4383a, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 1767738779}
+  oldItemSound: {fileID: 1767738778}
 --- !u!65 &1767738782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26484,8 +26484,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 656a7bdf56ec66d479e142a70e312e56, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 1824568680}
+  oldItemSound: {fileID: 1824568679}
 --- !u!65 &1824568683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28194,8 +28194,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: 0d493924331ce1047a4e7fc953ae6d60, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 1938087079}
+  oldItemSound: {fileID: 1938087078}
 --- !u!65 &1938087082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29116,8 +29116,8 @@ MonoBehaviour:
   inventoryObject: {fileID: 1919982739}
   item: {fileID: 11400000, guid: efa20ac16aa2511478fef2f06de88e77, type: 2}
   addedToInventory: 0
-  newItemSound: {fileID: 9214859}
-  oldItemSound: {fileID: 9214858}
+  newItemSound: {fileID: 1968390555}
+  oldItemSound: {fileID: 1968390554}
 --- !u!65 &1968390558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39962,10 +39962,10 @@ GameObject:
   - component: {fileID: 4044710143018605754}
   - component: {fileID: 7718390322237071427}
   - component: {fileID: 1767738782}
+  - component: {fileID: 1767738781}
   - component: {fileID: 1767738778}
   - component: {fileID: 1767738779}
   - component: {fileID: 1767738780}
-  - component: {fileID: 1767738781}
   m_Layer: 0
   m_Name: Crate (7)
   m_TagString: Untagged
@@ -40141,10 +40141,10 @@ GameObject:
   - component: {fileID: 4044710142554502441}
   - component: {fileID: 7718390322168498640}
   - component: {fileID: 651457068}
+  - component: {fileID: 651457067}
   - component: {fileID: 651457064}
   - component: {fileID: 651457065}
   - component: {fileID: 651457066}
-  - component: {fileID: 651457067}
   m_Layer: 0
   m_Name: Crate (4)
   m_TagString: Untagged
@@ -40164,10 +40164,10 @@ GameObject:
   - component: {fileID: 4044710142548496570}
   - component: {fileID: 7718390322170833987}
   - component: {fileID: 1968390558}
+  - component: {fileID: 1968390557}
   - component: {fileID: 1968390554}
   - component: {fileID: 1968390555}
   - component: {fileID: 1968390556}
-  - component: {fileID: 1968390557}
   m_Layer: 0
   m_Name: Crate (5)
   m_TagString: Untagged
@@ -40187,10 +40187,10 @@ GameObject:
   - component: {fileID: 4044710142595452302}
   - component: {fileID: 7718390322058342775}
   - component: {fileID: 1938087082}
+  - component: {fileID: 1938087081}
   - component: {fileID: 1938087078}
   - component: {fileID: 1938087079}
   - component: {fileID: 1938087080}
-  - component: {fileID: 1938087081}
   m_Layer: 0
   m_Name: Crate (9)
   m_TagString: Untagged
@@ -40453,10 +40453,10 @@ GameObject:
   - component: {fileID: 4044710141742455158}
   - component: {fileID: 7718390323485959567}
   - component: {fileID: 648808545}
+  - component: {fileID: 648808542}
   - component: {fileID: 648808543}
   - component: {fileID: 648808544}
   - component: {fileID: 648808541}
-  - component: {fileID: 648808542}
   m_Layer: 0
   m_Name: Crate (11)
   m_TagString: Untagged
@@ -40510,10 +40510,10 @@ GameObject:
   - component: {fileID: 4044710141743135030}
   - component: {fileID: 7718390323513066959}
   - component: {fileID: 626157602}
+  - component: {fileID: 626157601}
   - component: {fileID: 626157598}
   - component: {fileID: 626157599}
   - component: {fileID: 626157600}
-  - component: {fileID: 626157601}
   m_Layer: 0
   m_Name: Crate (6)
   m_TagString: Untagged
@@ -40533,10 +40533,10 @@ GameObject:
   - component: {fileID: 4044710141841314345}
   - component: {fileID: 7718390323450539728}
   - component: {fileID: 1148816378}
+  - component: {fileID: 1148816377}
   - component: {fileID: 1148816374}
   - component: {fileID: 1148816375}
   - component: {fileID: 1148816376}
-  - component: {fileID: 1148816377}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -40556,10 +40556,10 @@ GameObject:
   - component: {fileID: 4044710141582697250}
   - component: {fileID: 7718390323075817435}
   - component: {fileID: 1059222037}
+  - component: {fileID: 1059222034}
   - component: {fileID: 1059222035}
   - component: {fileID: 1059222036}
   - component: {fileID: 1059222033}
-  - component: {fileID: 1059222034}
   m_Layer: 0
   m_Name: Crate (10)
   m_TagString: Untagged
@@ -40647,10 +40647,10 @@ GameObject:
   - component: {fileID: 4044710141707058359}
   - component: {fileID: 7718390323047923790}
   - component: {fileID: 1272426173}
+  - component: {fileID: 1272426172}
   - component: {fileID: 1272426169}
   - component: {fileID: 1272426170}
   - component: {fileID: 1272426171}
-  - component: {fileID: 1272426172}
   m_Layer: 0
   m_Name: Crate (3)
   m_TagString: Untagged
@@ -40806,10 +40806,10 @@ GameObject:
   - component: {fileID: 4044710141411530403}
   - component: {fileID: 7718390322770405978}
   - component: {fileID: 902270989}
+  - component: {fileID: 902270988}
   - component: {fileID: 902270985}
   - component: {fileID: 902270986}
   - component: {fileID: 902270987}
-  - component: {fileID: 902270988}
   m_Layer: 0
   m_Name: Crate (2)
   m_TagString: Untagged
@@ -40919,10 +40919,10 @@ GameObject:
   - component: {fileID: 4044710141153110274}
   - component: {fileID: 7718390322494051835}
   - component: {fileID: 428832821}
+  - component: {fileID: 428832818}
   - component: {fileID: 428832819}
   - component: {fileID: 428832820}
   - component: {fileID: 428832817}
-  - component: {fileID: 428832818}
   m_Layer: 0
   m_Name: Crate (12)
   m_TagString: Untagged
@@ -41028,10 +41028,10 @@ GameObject:
   - component: {fileID: 4044710141024557408}
   - component: {fileID: 7718390322660353433}
   - component: {fileID: 1824568683}
+  - component: {fileID: 1824568682}
   - component: {fileID: 1824568679}
   - component: {fileID: 1824568680}
   - component: {fileID: 1824568681}
-  - component: {fileID: 1824568682}
   m_Layer: 0
   m_Name: Crate (1)
   m_TagString: Untagged

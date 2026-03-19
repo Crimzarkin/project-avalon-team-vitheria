@@ -32,7 +32,7 @@ public class BuildSystem : MonoBehaviour
 
     // <-- Missing variable added
     private bool waitingForSecondPress = false;
-    private float blockSize = 0.5f;
+    private float blockSize = 25f;
 
     void Start()
     {
