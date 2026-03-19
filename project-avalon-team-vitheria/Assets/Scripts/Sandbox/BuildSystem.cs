@@ -165,7 +165,7 @@ public class BuildSystem : MonoBehaviour
             }
         }
 
-        // If no block is hit → restore highlight
+        // If no block is hit, restore color
         if (lastHightlightedBlock != null)
         {
             lastHightlightedBlock.GetComponent<Renderer>().material.color = lastColor;
@@ -176,6 +176,5 @@ public class BuildSystem : MonoBehaviour
     public void changeBlock(GameObject block)
     {
         blockObject = block; 
-        Debug.Log("Block Changed");
     }
 }
