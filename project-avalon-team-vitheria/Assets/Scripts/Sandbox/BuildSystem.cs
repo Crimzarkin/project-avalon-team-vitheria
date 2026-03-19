@@ -101,11 +101,26 @@ public class BuildSystem : MonoBehaviour
             
             if (hitInfo.collider.GetComponent<TerrainCollider>() != null)
             {
-                spawnPosition = hitInfo.point + Vector3.up * blockSize;
+                //spawnPosition = hitInfo.point + Vector3.up * blockSize;
+                Vector3Int terrainGrid = Vector3Int.RoundToInt(hitInfo.point / blockSize);
+                spawnPosition = terrainGrid * blockSize;
+
             }
             else if (hitInfo.transform.CompareTag("Block"))
             {
-                spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
+                //spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
+
+                Vector3Int blockGrid = Vector3Int.RoundToInt(hitInfo.transform.position / blockSize);
+                Vector3 n = hitInfo.normal;
+                if (Mathf.Abs(n.x) > Mathf.Abs(n.y) && Mathf.Abs(n.x) > Mathf.Abs(n.z))
+                    n = new Vector3(Mathf.Sign(n.x), 0, 0);
+                else if (Mathf.Abs(n.y) > Mathf.Abs(n.x) && Mathf.Abs(n.y) > Mathf.Abs(n.z))
+                    n = new Vector3(0, Mathf.Sign(n.y), 0);
+                else
+                    n = new Vector3(0, 0, Mathf.Sign(n.z));
+                Vector3Int normalGrid = Vector3Int.RoundToInt(n);
+                Vector3Int targetGrid = blockGrid + normalGrid;
+                spawnPosition = targetGrid * blockSize;
             }
             else
             {
