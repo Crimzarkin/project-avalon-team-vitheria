@@ -10639,6 +10639,7 @@ GameObject:
   - component: {fileID: 8045922790574968720}
   - component: {fileID: 3052850529782185257}
   - component: {fileID: 7607969615481280074}
+  - component: {fileID: 1449266011821025517}
   m_Layer: 0
   m_Name: Plane.005
   m_TagString: Untagged
@@ -10646,6 +10647,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &1449266011821025517
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449266011821025516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8302102485596996044, guid: f45c45ace1dd0a64eb1c5c60747360da, type: 3}
 --- !u!4 &1512213145643904979
 Transform:
   m_ObjectHideFlags: 0
@@ -10668,7 +10683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629122108358213062}
   m_LocalRotation: {x: -0.61237246, y: -0.3535534, z: -0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: -0.0000019073486, y: 0.2, z: 0}
+  m_LocalPosition: {x: -0.0000019073486, y: -0.5, z: 0}
   m_LocalScale: {x: 103.8621, y: 68.53401, z: 107.475235}
   m_Children: []
   m_Father: {fileID: 1816492249188262590}
@@ -10731,7 +10746,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7221759ed7df90f4aaaf41406af7704b, type: 2}
+  - {fileID: 2100000, guid: 3fbbaa2ac7aeb2e438a1763dd1704daa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12068,7 +12083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302589428454373110}
   m_LocalRotation: {x: -0.61237246, y: -0.35355338, z: -0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: -0.0000019073486, y: 0.2, z: 0}
+  m_LocalPosition: {x: -0.0000019073486, y: -0.5, z: 0}
   m_LocalScale: {x: 103.8621, y: 68.53401, z: 107.475235}
   m_Children: []
   m_Father: {fileID: 1816492249188262590}
@@ -13870,7 +13885,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7221759ed7df90f4aaaf41406af7704b, type: 2}
+  - {fileID: 2100000, guid: 3fbbaa2ac7aeb2e438a1763dd1704daa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14676,6 +14691,8 @@ GameObject:
   - component: {fileID: 361276836018695217}
   - component: {fileID: 7984245322588213942}
   - component: {fileID: 6695277568257493738}
+  - component: {fileID: 9086110134965712632}
+  - component: {fileID: 9086110134965712631}
   m_Layer: 0
   m_Name: DoorwayBackdrop.001
   m_TagString: Untagged
@@ -14683,6 +14700,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!114 &9086110134965712631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086110134965712630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71807dbbda9353045b737d660c055034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &9086110134965712632
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086110134965712630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2267053660512534197, guid: f45c45ace1dd0a64eb1c5c60747360da, type: 3}
 --- !u!1 &9091094861201813244
 GameObject:
   m_ObjectHideFlags: 0
