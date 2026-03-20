@@ -103,7 +103,7 @@ public class BuildSystem : MonoBehaviour
             {
                 //spawnPosition = hitInfo.point + Vector3.up * blockSize;
                 Vector3Int terrainGrid = Vector3Int.RoundToInt(hitInfo.point / blockSize);
-                spawnPosition = terrainGrid * blockSize;
+                spawnPosition = (Vector3)terrainGrid * blockSize;
 
             }
             else if (hitInfo.transform.CompareTag("Block"))
@@ -120,18 +120,18 @@ public class BuildSystem : MonoBehaviour
                     n = new Vector3(0, 0, Mathf.Sign(n.z));
                 Vector3Int normalGrid = Vector3Int.RoundToInt(n);
                 Vector3Int targetGrid = blockGrid + normalGrid;
-                spawnPosition = targetGrid * blockSize;
+                spawnPosition = (Vector3)targetGrid * blockSize;
             }
             else
             {
                 return;
             }
 
-            spawnPosition = new Vector3(
-                    Mathf.Round(spawnPosition.x / blockSize) * blockSize,
-                    Mathf.Round(spawnPosition.y / blockSize) * blockSize,
-                    Mathf.Round(spawnPosition.z / blockSize) * blockSize
-            );
+            //spawnPosition = new Vector3(
+            //        Mathf.Round(spawnPosition.x / blockSize) * blockSize,
+            //        Mathf.Round(spawnPosition.y / blockSize) * blockSize,
+            //        Mathf.Round(spawnPosition.z / blockSize) * blockSize
+            // );
 
             GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
             blockInstance.tag = "Block";
