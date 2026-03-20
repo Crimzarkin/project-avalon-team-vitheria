@@ -28,6 +28,10 @@ public class GrabObject : MonoBehaviour
     private InputDevice controller;
     private bool buttonPreviouslyPressed = false;
     private bool triggerPreviouslyPressed = false;
+    private Vector2 axis;
+    private bool leftSwipe = false;
+    private bool rightSwipe = false;
+    public float swipeThreshold = 0.6f;
 
     void Start()
     {
@@ -125,14 +129,27 @@ public class GrabObject : MonoBehaviour
             }
         }
         buttonPreviouslyPressed = buttonPressed;
-
-        // Snap turn using trigger (right turn)
-        bool triggerPressed = false;
-        if (controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed) && triggerPressed && !triggerPreviouslyPressed)
+        // Snap turn using touchpad swipe (Oculus Go)
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis))
         {
-            SnapTurn(snapTurnAngle); // Turn right
+            // Left swipe
+            if (axis.x < -swipeThreshold && !leftSwipe)
+            {
+                SnapTurn(-snapTurnAngle);
+                leftSwipe = true;
+            }
+            else if (axis.x > -swipeThreshold)
+                leftSwipe = false;
+
+            // Right swipe
+            if (axis.x > swipeThreshold && !rightSwipe)
+            {
+                SnapTurn(snapTurnAngle);
+                rightSwipe = true;
+            }
+            else if (axis.x < swipeThreshold)
+                rightSwipe = false;
         }
-        triggerPreviouslyPressed = triggerPressed;
 
         HighlightObject();
     }

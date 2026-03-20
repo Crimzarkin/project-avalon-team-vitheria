@@ -3613,11 +3613,12 @@ MonoBehaviour:
   tutorialPanel: {fileID: 0}
   handPosition: {fileID: 805894509}
   heldObject: {fileID: 0}
-  XRRig: {fileID: 0}
+  XRRig: {fileID: 1718675023}
   highlightMaterial: {fileID: 2100000, guid: 833c632cd262c9547a0e4d2b95640dcb, type: 2}
   grabRange: 4
   teleportRange: 100
   snapTurnAngle: 45
+  swipeThreshold: 0.6
 --- !u!1 &348867494
 GameObject:
   m_ObjectHideFlags: 0
