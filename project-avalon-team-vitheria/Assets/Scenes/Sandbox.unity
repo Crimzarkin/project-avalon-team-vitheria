@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2d5f28112cacd194981ff42f2454de69, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8314ffe855e0e45b0a2fdbbdfe2010ea, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -14736,7 +14736,6 @@ Transform:
   m_Children:
   - {fileID: 281450065}
   - {fileID: 704564065}
-  - {fileID: 1949524057}
   - {fileID: 2011068499}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -28507,50 +28506,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947483523}
   m_Mesh: {fileID: -3541629673168548286, guid: 71743a68d025eab4d8fe0f5daecd7ef7, type: 3}
---- !u!1 &1949524056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1949524057}
-  - component: {fileID: 1949524058}
-  m_Layer: 0
-  m_Name: InvisibleWall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1949524057
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949524056}
-  m_LocalRotation: {x: 0.04411257, y: 0.3124569, z: -0.014527097, w: 0.94879603}
-  m_LocalPosition: {x: 289.12, y: 2.3, z: 249.5}
-  m_LocalScale: {x: 30.817554, y: 10, z: 0.2586534}
-  m_Children: []
-  m_Father: {fileID: 1006495670}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 5.3240004, y: 36.455, z: 0}
---- !u!65 &1949524058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949524056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1954115692
 GameObject:
   m_ObjectHideFlags: 0
@@ -30001,7 +29956,7 @@ Transform:
   - {fileID: 5006512736808016261}
   - {fileID: 5006512736401487175}
   m_Father: {fileID: 1006495670}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2016178308
 MeshCollider:
@@ -32621,7 +32576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334586306652593384}
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -27.8, y: 20.9, z: 117.8}
+  m_LocalPosition: {x: -27.8, y: 24.1, z: 117.8}
   m_LocalScale: {x: 519.5962, y: 519.5962, z: 519.5962}
   m_Children: []
   m_Father: {fileID: 5006512736016414835}
@@ -40089,6 +40044,7 @@ GameObject:
   - component: {fileID: 5006512736829765249}
   - component: {fileID: 4044710142732389559}
   - component: {fileID: 7718390321925599310}
+  - component: {fileID: 8296172667701167251}
   m_Layer: 0
   m_Name: Cabin (2)
   m_TagString: Untagged
@@ -40096,6 +40052,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &8296172667701167251
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172667701167250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1712755729169388747, guid: 4636cee5f039e8c4dbe79a7f8fea97ff, type: 3}
 --- !u!1 &8296172667732487062
 GameObject:
   m_ObjectHideFlags: 0
