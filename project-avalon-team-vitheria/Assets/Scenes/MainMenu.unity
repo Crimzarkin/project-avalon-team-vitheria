@@ -2300,7 +2300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 33}
+  m_AnchoredPosition: {x: -1, y: 66}
   m_SizeDelta: {x: 273.7169, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &809396584
@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sand + Water + House = Beach
+  m_text: Lay Back and Enjoy The Beach Life!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ca6c1599324e1c4297bbbcff974238c, type: 2}
   m_sharedMaterial: {fileID: -3608340362051068841, guid: 1ca6c1599324e1c4297bbbcff974238c,
@@ -2392,12 +2392,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 809396584}
-    characterCount: 28
+    characterCount: 34
     spriteCount: 0
     spaceCount: 6
-    wordCount: 4
+    wordCount: 7
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -6635,7 +6635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18, y: 35}
+  m_AnchoredPosition: {x: 18, y: 78}
   m_SizeDelta: {x: 570.33264, y: 50.481308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705664897
@@ -6657,7 +6657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Seed + Water + Soil + Sunlight = Plant
+  m_text: Embark In A Garden Journey Where You Can Watch Your Plants Grow!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ca6c1599324e1c4297bbbcff974238c, type: 2}
   m_sharedMaterial: {fileID: -3608340362051068841, guid: 1ca6c1599324e1c4297bbbcff974238c,
@@ -6703,7 +6703,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 33
+  m_firstOverflowCharacterIndex: 27
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6727,12 +6727,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1705664897}
-    characterCount: 38
+    characterCount: 64
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 5
+    spaceCount: 11
+    wordCount: 12
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
