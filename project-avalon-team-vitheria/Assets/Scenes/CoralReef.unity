@@ -25606,6 +25606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1078346826}
   - component: {fileID: 1078346825}
+  - component: {fileID: 1078346827}
   m_Layer: 0
   m_Name: AnimationController
   m_TagString: Untagged
@@ -25640,6 +25641,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1078346827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078346824}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ceb754b9534344cac06f6172f06553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: {fileID: 1868734256}
+  Joystick: {fileID: 250945277}
 --- !u!1 &1101929527
 GameObject:
   m_ObjectHideFlags: 0
@@ -27585,7 +27600,7 @@ PrefabInstance:
     - target: {fileID: 3494856239839707552, guid: c116b7497ab8ca34c9188965d4295e27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 3494856239839707552, guid: c116b7497ab8ca34c9188965d4295e27,
         type: 3}
