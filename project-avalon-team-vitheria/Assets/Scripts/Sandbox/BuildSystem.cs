@@ -110,11 +110,12 @@ public class BuildSystem : MonoBehaviour
 
             float terrainHeight = terrain.SampleHeight(hitInfo.point);
 
-            int gx = Mathf.FloorToInt(hitInfo.point.x / blockSize);
-            int gz = Mathf.FloorToInt(hitInfo.point.z / blockSize);
-            int gy = Mathf.FloorToInt(terrainHeight / blockSize) + 1;
+            float x = Mathf.Floor(hitInfo.point.x / blockSize) * blockSize;
+            float z = Mathf.Floor(hitInfo.point.z / blockSize) * blockSize;
+            float y = Mathf.Floor(terrainHeight / blockSize) * blockSize + blockSize;
 
-            spawnPosition = new Vector3(gx, gy, gz) * blockSize;
+            spawnPosition = new Vector3(x, y, z);
+
 
         }
         else if (hitInfo.transform.CompareTag("Block"))
