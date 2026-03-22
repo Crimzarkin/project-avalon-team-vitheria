@@ -95,7 +95,7 @@ public class BuildSystem : MonoBehaviour
     {
         Vector3 origin = shootingPoint.position + shootingPoint.forward * 0.01f;
 
-        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength, QueryTriggerInteraction.Ignore))
+        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
             return;
 
         if (!ZoneObject)
