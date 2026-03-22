@@ -9,17 +9,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BuildSystem : MonoBehaviour
 {
     public Transform shootingPoint;
-    public GameObject blockObject = null;
-
     public bool inventoryClosed = true;
+    
+    // Block placement
+    private bool ZoneObject = false;
+    private float RaycastLength = 5.0f;
+    public GameObject blockObject = null;
     public Transform parent;
-
     private Color lastColor;
     public Color highlightedColor;
     private GameObject lastHightlightedBlock;
-// Block placement
-    private bool ZoneObject = false;
-    private float RaycastLength = 5.0f;
 
     // XR Input
     private InputDevice controller;
@@ -94,48 +93,61 @@ public class BuildSystem : MonoBehaviour
 
     void BuildBlock(GameObject block)
     {
-        if (Physics.Raycast(shootingPoint.position, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength) &&
-            ZoneObject)
+        Vector3 origin = shootingPoint.position + shootingPoint.forward * 0.01f;
+        int mask = LayerMask.GetMask("Block", "Terrain");
+
+        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength, mask, QueryTriggerInteraction.Ignore))
+            return;
+
+        if (!ZoneObject)
+            return;
+
+        Vector3 spawnPosition;
+        Terrain terrain = hitInfo.collider.GetComponent<Terrain>();
+
+        if (terrain != null)
         {
-            Vector3 spawnPosition;
-            
-            if (hitInfo.collider.GetComponent<TerrainCollider>() != null)
-            {
-                //spawnPosition = hitInfo.point + Vector3.up * blockSize;
-                Vector3Int terrainGrid = Vector3Int.RoundToInt(hitInfo.point / blockSize);
-                spawnPosition = (Vector3)terrainGrid * blockSize;
+            float terrainHeight = terrain.SampleHeight(hitInfo.point);
+            float y = Mathf.Ceil(terrainHeight / blockSize) * blockSize;
 
-            }
-            else if (hitInfo.transform.CompareTag("Block"))
-            {
-                //spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
-
-                Vector3Int blockGrid = Vector3Int.RoundToInt(hitInfo.transform.position / blockSize);
-                Vector3 n = hitInfo.normal;
-                if (Mathf.Abs(n.x) > Mathf.Abs(n.y) && Mathf.Abs(n.x) > Mathf.Abs(n.z))
-                    n = new Vector3(Mathf.Sign(n.x), 0, 0);
-                else if (Mathf.Abs(n.y) > Mathf.Abs(n.x) && Mathf.Abs(n.y) > Mathf.Abs(n.z))
-                    n = new Vector3(0, Mathf.Sign(n.y), 0);
-                else
-                    n = new Vector3(0, 0, Mathf.Sign(n.z));
-                Vector3Int normalGrid = Vector3Int.RoundToInt(n);
-                Vector3Int targetGrid = blockGrid + normalGrid;
-                spawnPosition = (Vector3)targetGrid * blockSize;
-            }
-            else
-            {
-                return;
-            }
-
-            //spawnPosition = new Vector3(
-            //        Mathf.Round(spawnPosition.x / blockSize) * blockSize,
-            //        Mathf.Round(spawnPosition.y / blockSize) * blockSize,
-            //        Mathf.Round(spawnPosition.z / blockSize) * blockSize
-            // );
-
-            GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
-            blockInstance.tag = "Block";
+            Vector3Int grid = new Vector3Int(
+                Mathf.RoundToInt(hitInfo.point.x / blockSize),
+                Mathf.RoundToInt(y / blockSize),
+                Mathf.RoundToInt(hitInfo.point.z / blockSize)
+            );
+            spawnPosition = (Vector3)grid * blockSize;
         }
+        else if (hitInfo.transform.CompareTag("Block"))
+        {
+            Vector3Int blockGrid = Vector3Int.RoundToInt(hitInfo.transform.position / blockSize);
+            Vector3 n = hitInfo.normal;
+
+            if (n.sqrMagnitude < 0.01)
+                return;
+
+            if (Mathf.Abs(n.x) > Mathf.Abs(n.y) && Mathf.Abs(n.x) > Mathf.Abs(n.z))
+                n = new Vector3(Mathf.Sign(n.x), 0, 0);
+            else if (Mathf.Abs(n.y) > Mathf.Abs(n.x) && Mathf.Abs(n.y) > Mathf.Abs(n.z))
+                n = new Vector3(0, Mathf.Sign(n.y), 0);
+            else
+                n = new Vector3(0, 0, Mathf.Sign(n.z));
+            Vector3Int normalGrid = Vector3Int.RoundToInt(n);
+            Vector3Int targetGrid = blockGrid + normalGrid;
+            spawnPosition = (Vector3)targetGrid * blockSize;
+        }
+        else
+        {
+            return;
+        }
+
+        spawnPosition = new Vector3(
+            Mathf.Round(spawnPosition.x / blockSize) * blockSize,
+            Mathf.Round(spawnPosition.y / blockSize) * blockSize,
+            Mathf.Round(spawnPosition.z / blockSize) * blockSize
+        );
+
+        GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
+        blockInstance.tag = "Block";
     }
 
     public void ResetBlocks()
