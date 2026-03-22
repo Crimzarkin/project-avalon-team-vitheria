@@ -108,15 +108,16 @@ public class BuildSystem : MonoBehaviour
         {
             Terrain terrain = terrainCol.GetComponent<Terrain>();
 
-            float terrainHeight = terrain.SampleHeight(hitInfo.point);
-
             float x = Mathf.Floor(hitInfo.point.x / blockSize) * blockSize;
             float z = Mathf.Floor(hitInfo.point.z / blockSize) * blockSize;
+
+            // 2. Sample terrain height at the snapped X/Z
+            float terrainHeight = terrain.SampleHeight(new Vector3(x, 0, z));
+
+            // 3. Snap Y to the grid cell ABOVE terrain
             float y = Mathf.Floor(terrainHeight / blockSize) * blockSize + blockSize;
 
             spawnPosition = new Vector3(x, y, z);
-
-
         }
         else if (hitInfo.transform.CompareTag("Block"))
         {
