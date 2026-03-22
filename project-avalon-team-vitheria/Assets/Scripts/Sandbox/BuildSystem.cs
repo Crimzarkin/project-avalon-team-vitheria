@@ -94,20 +94,20 @@ public class BuildSystem : MonoBehaviour
     void BuildBlock(GameObject block)
     {
         Vector3 origin = shootingPoint.position + shootingPoint.forward * 0.01f;
-        int mask = LayerMask.GetMask("Block", "Terrain");
 
-        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength, mask, QueryTriggerInteraction.Ignore))
+        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
             return;
 
         if (!ZoneObject)
             return;
 
         Vector3 spawnPosition;
-        Terrain terrain = hitInfo.collider.GetComponent<Terrain>();
+        TerrainCollider terrain = hitInfo.collider.GetComponent<TerrainCollider>();
 
         if (terrain != null)
         {
-            float terrainHeight = terrain.SampleHeight(hitInfo.point);
+            float terrainHeight = terrain.terrainData.GetInterpolatedHeight(hitInfo.point.x, hitInfo.point.z);
+
             float y = Mathf.Ceil(terrainHeight / blockSize) * blockSize;
 
             Vector3Int grid = new Vector3Int(
