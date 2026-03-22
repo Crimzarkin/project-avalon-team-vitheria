@@ -95,19 +95,20 @@ public class BuildSystem : MonoBehaviour
     {
         Vector3 origin = shootingPoint.position + shootingPoint.forward * 0.01f;
 
-        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength))
+        if (!Physics.Raycast(origin, shootingPoint.forward, out RaycastHit hitInfo, RaycastLength, QueryTriggerInteraction.Ignore))
             return;
 
         if (!ZoneObject)
             return;
 
         Vector3 spawnPosition;
-        TerrainCollider terrain = hitInfo.collider.GetComponent<TerrainCollider>();
+        TerrainCollider terrainCol = hitInfo.collider.GetComponent<TerrainCollider>();
 
-        if (terrain != null)
+        if (terrainCol != null)
         {
-            float terrainHeight = terrain.terrainData.GetInterpolatedHeight(hitInfo.point.x, hitInfo.point.z);
+            Terrain terrain = terrainCol.GetComponent<Terrain>();
 
+            float terrainHeight = terrain.SampleHeight(hitInfo.point);
             float y = Mathf.Ceil(terrainHeight / blockSize) * blockSize;
 
             Vector3Int grid = new Vector3Int(
@@ -122,7 +123,7 @@ public class BuildSystem : MonoBehaviour
             Vector3Int blockGrid = Vector3Int.RoundToInt(hitInfo.transform.position / blockSize);
             Vector3 n = hitInfo.normal;
 
-            if (n.sqrMagnitude < 0.01)
+            if (n.sqrMagnitude < 0.01f)
                 return;
 
             if (Mathf.Abs(n.x) > Mathf.Abs(n.y) && Mathf.Abs(n.x) > Mathf.Abs(n.z))
