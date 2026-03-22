@@ -109,14 +109,13 @@ public class BuildSystem : MonoBehaviour
             Terrain terrain = terrainCol.GetComponent<Terrain>();
 
             float terrainHeight = terrain.SampleHeight(hitInfo.point);
-            float y = Mathf.Ceil(terrainHeight / blockSize) * blockSize;
 
-            Vector3Int grid = new Vector3Int(
-                Mathf.RoundToInt(hitInfo.point.x / blockSize),
-                Mathf.RoundToInt(y / blockSize),
-                Mathf.RoundToInt(hitInfo.point.z / blockSize)
-            );
-            spawnPosition = (Vector3)grid * blockSize;
+            int gx = Mathf.FloorToInt(point.x / blockSize);
+            int gz = Mathf.FloorToInt(point.z / blockSize);
+            int gy = Mathf.FloorToInt(terrainHeight / blockSize) + 1;
+
+            spawnPosition = new Vector3(gx, gy, gz) * blockSize;
+
         }
         else if (hitInfo.transform.CompareTag("Block"))
         {
@@ -140,12 +139,6 @@ public class BuildSystem : MonoBehaviour
         {
             return;
         }
-
-        spawnPosition = new Vector3(
-            Mathf.Round(spawnPosition.x / blockSize) * blockSize,
-            Mathf.Round(spawnPosition.y / blockSize) * blockSize,
-            Mathf.Round(spawnPosition.z / blockSize) * blockSize
-        );
 
         GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
         blockInstance.tag = "Block";
