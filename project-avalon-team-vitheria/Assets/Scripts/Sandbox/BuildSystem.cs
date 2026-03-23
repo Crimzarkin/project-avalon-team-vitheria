@@ -9,16 +9,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BuildSystem : MonoBehaviour
 {
     public Transform shootingPoint;
-    public bool inventoryClosed = true;
-    
-    // Block placement
-    private bool ZoneObject = false;
-    private float RaycastLength = 5.0f;
     public GameObject blockObject = null;
+
+    public bool inventoryClosed = true;
     public Transform parent;
+
     private Color lastColor;
     public Color highlightedColor;
     private GameObject lastHightlightedBlock;
+// Block placement
+    private bool ZoneObject = false;
+    private float RaycastLength = 5.0f;
 
     // XR Input
     private InputDevice controller;
@@ -100,12 +101,14 @@ public class BuildSystem : MonoBehaviour
             
             if (hitInfo.collider.GetComponent<TerrainCollider>() != null)
             {
-                Vector3 offsetPoint = hitInfo.point + hitInfo.normal * (blockSize * 0.5f);
-                Vector3Int terrainGrid = Vector3Int.RoundToInt(offsetPoint / blockSize);
+                //spawnPosition = hitInfo.point + Vector3.up * blockSize;
+                Vector3Int terrainGrid = Vector3Int.RoundToInt(hitInfo.point / blockSize);
                 spawnPosition = (Vector3)terrainGrid * blockSize;
+
             }
             else if (hitInfo.transform.CompareTag("Block"))
             {
+                //spawnPosition = hitInfo.transform.position + hitInfo.normal * blockSize;
 
                 Vector3Int blockGrid = Vector3Int.RoundToInt(hitInfo.transform.position / blockSize);
                 Vector3 n = hitInfo.normal;
@@ -124,11 +127,11 @@ public class BuildSystem : MonoBehaviour
                 return;
             }
 
-            spawnPosition = new Vector3(
-                    Mathf.Round(spawnPosition.x / blockSize) * blockSize,
-                    Mathf.Round(spawnPosition.y / blockSize) * blockSize,
-                    Mathf.Round(spawnPosition.z / blockSize) * blockSize
-            );
+            //spawnPosition = new Vector3(
+            //        Mathf.Round(spawnPosition.x / blockSize) * blockSize,
+            //        Mathf.Round(spawnPosition.y / blockSize) * blockSize,
+            //        Mathf.Round(spawnPosition.z / blockSize) * blockSize
+            // );
 
             GameObject blockInstance = Instantiate(block, spawnPosition, Quaternion.identity, parent);
             blockInstance.tag = "Block";

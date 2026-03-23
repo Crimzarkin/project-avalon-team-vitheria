@@ -21,17 +21,4 @@ public class SwitchChannel : MonoBehaviour
             channel = 1;
         }
     }
-    public void TogglePreviousChannels()
-    {
-        if (channel > 1)
-        {
-            channel--;
-            map.GetComponent<SpriteRenderer>().sprite = channels[channel - 1];
-        }
-        else
-        {
-            channel = channels.Count;
-            map.GetComponent<SpriteRenderer>().sprite = channels[channel - 1];
-        }
-    }
 }
