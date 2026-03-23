@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
-
+using UnityEngine.SceneManagement;
 public class BeachMove : MonoBehaviour
 {
     private float moveSpeed = 14.0f;
@@ -23,6 +23,10 @@ public class BeachMove : MonoBehaviour
 
     // Swipe Detection Threshold
     public float swipeThreshold = 0.6f;
+    private float exitHoldTime = 0f;
+    public float requiredExitHoldTime = 2f;
+    public string mainMenuSceneName = "MainMenu";
+    private bool touchpadPressed = false;
 
     void Start()
     {
@@ -35,6 +39,25 @@ public class BeachMove : MonoBehaviour
         if (!controller.isValid)
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
+        // ---------- EXIT TO MAIN MENU ----------
+        if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out touchpadPressed))
+        {
+            if (touchpadPressed)
+            {
+                exitHoldTime += Time.deltaTime;
+
+                if (exitHoldTime >= requiredExitHoldTime)
+                {
+                    LoadMainMenu();
+                    return;
+                }
+            }
+            else
+            {
+                exitHoldTime = 0f;
+            }
+        }
+        
         // ---------- MOVEMENT ----------
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerPressed);
 
@@ -117,5 +140,10 @@ public class BeachMove : MonoBehaviour
         transform.Rotate(Vector3.up, angle);
     }
 
+
+    void LoadMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
 
 }
