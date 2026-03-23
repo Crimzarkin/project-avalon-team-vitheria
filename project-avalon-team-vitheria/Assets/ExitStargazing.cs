@@ -7,6 +7,7 @@ public class ExitStargazing : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        Debug.Log("Loading Main Menu...");
+        SceneManager.LoadScene("MainMenu");
     }
 }

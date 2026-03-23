@@ -10,7 +10,7 @@ public class TreasureItem : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
-            GameObject.Find("Player").GetComponent<TreasureCounterHUD>().decreaseCounter();
+            GameObject.Find("HUD").GetComponent<TreasureCounterHUD>().decreaseCounter();
             Destroy(gameObject);
         }
     }

@@ -35,9 +35,9 @@ public class TreasureSpawner : MonoBehaviour
 
         if (amount > numOfPositions)
         {
-            throw new ArgumentOutOfRangeException(nameof(amount),"Amount of treasure exceeds available spawn locations: " + numOfPositions);
+            throw new ArgumentOutOfRangeException(nameof(amount),"Amount of treasure exceeds available spawn locations");
         }
-        GameObject folder = new GameObject("Coins");
+
         for (int loop = 0; loop < amount; loop++)
         {
             do
@@ -46,12 +46,8 @@ public class TreasureSpawner : MonoBehaviour
                 treasurePrefabSelector = Random.Range(0,treasurePrefabs.Length);
             } while (randPositions.Contains(treasurePosition));
             randPositions[loop] = treasurePosition;
-            Instantiate(treasurePrefabs[treasurePrefabSelector], spawnPoints[treasurePosition].position, transform.rotation, folder.transform);
+            Instantiate(treasurePrefabs[treasurePrefabSelector], spawnPoints[treasurePosition].position, transform.rotation);
         }
-        var test = GameObject.FindWithTag("Player").GetComponent<TreasureCounterHUD>();
-        test.setcounterText(amount);
-        Debug.Log("Found: "+test);
-        
     }
 
     // Fetches all tagged spawnPoints in the scene
@@ -63,5 +59,6 @@ public class TreasureSpawner : MonoBehaviour
         {
             spawnPoints[spawnPoint] = spawnPointObjects[spawnPoint].transform;
         }
+        GameObject.Find("HUD").GetComponent<TreasureCounterHUD>().setcounterText(treasureAmount);
     }
 }

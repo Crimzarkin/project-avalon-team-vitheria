@@ -48,14 +48,15 @@ public class GrabObject : MonoBehaviour
             controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
 
+        // Grab / Drop / Teleport Using 2D Axis
         bool buttonPressed = false;
         if (controller.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out buttonPressed))
         {
             if (buttonPressed)
             {
                 axisHoldTimer += Time.deltaTime;
-                leftSwipe = false;
-                rightSwipe = false;
+
+                // If held long enough → Load Main Menu
                 if (axisHoldTimer >= axisHoldTime)
                 {
                     LoadMainMenu();

@@ -2,6 +2,7 @@
 
 public class ControlJoystick : MonoBehaviour
 {
+    [SerializeField] private GameObject Joystick;
     [SerializeField] private GameObject Hand;
     // Negative X rotation is up and postive X rotation is down
     [SerializeField] private float xDeadzone = 10;
@@ -14,7 +15,7 @@ public class ControlJoystick : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody>();
     }
-    void FixedUpdate()
+    void LateUpdate()
     {
         controlRotation();
         controlMovement();
