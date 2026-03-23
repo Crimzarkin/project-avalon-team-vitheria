@@ -48,7 +48,10 @@ public class TreasureSpawner : MonoBehaviour
             randPositions[loop] = treasurePosition;
             Instantiate(treasurePrefabs[treasurePrefabSelector], spawnPoints[treasurePosition].position, transform.rotation, folder.transform);
         }
-        GameObject.Find("Player").GetComponent<TreasureCounterHUD>().setcounterText(amount);
+        var test = GameObject.FindWithTag("Player").GetComponent<TreasureCounterHUD>();
+        test.setcounterText(amount);
+        Debug.Log("Found: "+test);
+        
     }
 
     // Fetches all tagged spawnPoints in the scene

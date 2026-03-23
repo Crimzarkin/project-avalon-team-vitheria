@@ -8,16 +8,7 @@ using UnityEngine.UI;
 public class TreasureCounterHUD : MonoBehaviour
 {
     private int count;
-    [SerializeField] private GameObject hudText;
-    private TextMeshProUGUI counterDisplay;
-    // Start is called before the first frame update
-    void Start()
-    {
-        counterDisplay = hudText.GetComponent<TextMeshProUGUI>();
-    }
-
-    // Update is called once per frame
-
+    [SerializeField] private TextMeshProUGUI counterDisplay;
     public void decreaseCounter()
     {
         if (count > 0)
