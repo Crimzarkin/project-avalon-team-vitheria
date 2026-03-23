@@ -4121,7 +4121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 320, y: 240}
+  m_AnchoredPosition: {x: 320, y: -149.1}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306254279
@@ -9691,7 +9691,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 626157601}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -9702,7 +9702,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 626157601}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -10986,7 +10986,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 651457067}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -10997,7 +10997,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 651457067}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -14542,7 +14542,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 902270988}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -14553,7 +14553,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 902270988}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -18392,7 +18392,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1148816377}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -18403,7 +18403,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1148816377}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -20249,7 +20249,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1272426172}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -20260,7 +20260,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1272426172}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -21167,7 +21167,7 @@ MonoBehaviour:
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
   m_LineType: 0
-  m_MaxRaycastDistance: 30
+  m_MaxRaycastDistance: 10
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
   m_Acceleration: 9.8
@@ -28274,7 +28274,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1767738781}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -28285,7 +28285,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1767738781}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -29307,7 +29307,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1824568682}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -29318,7 +29318,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1824568682}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -31138,7 +31138,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1938087081}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -31149,7 +31149,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1938087081}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -32180,7 +32180,7 @@ MonoBehaviour:
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1968390557}
         m_MethodName: AddBlockToInventory
         m_Mode: 1
         m_Arguments:
@@ -32191,7 +32191,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9214857}
+      - m_Target: {fileID: 1968390557}
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
