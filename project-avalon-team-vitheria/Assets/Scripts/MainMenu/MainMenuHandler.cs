@@ -9,7 +9,7 @@ public class MainMenuHandler : MonoBehaviour
 {
     public XRNode controllerNode = XRNode.RightHand;
     private InputDevice controller;
-    private Canvas menuCanvas = null;
+    private GameObject menuCanvas = null;
     private Canvas loadingCanvas = null;
     public Text loadingText;
     public float loadingSpeed = 0.5f;
@@ -19,7 +19,7 @@ public class MainMenuHandler : MonoBehaviour
     void Start()
     {
         controller = InputDevices.GetDeviceAtXRNode(controllerNode);
-        menuCanvas = GameObject.Find("Menu").GetComponent<Canvas>();
+        menuCanvas = GameObject.Find("Menu");
         loadingCanvas = GameObject.Find("Loading").GetComponent<Canvas>();
         loadingCanvas.enabled = false;
     }
@@ -31,7 +31,9 @@ public class MainMenuHandler : MonoBehaviour
             Application.Quit();
             return;
         }
-        menuCanvas.enabled = false;
+       
+        
+        menuCanvas.SetActive(false);
         loadingCanvas.enabled = true;
         StartCoroutine(AnimateLoading());
         SceneManager.LoadSceneAsync(sceneName);
