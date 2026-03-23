@@ -16,7 +16,7 @@ public class ControlLever : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         leverAnimation = GameObject.Find("AnimationController").GetComponent<DepthLeverAnimation>();
     }
-    void LateUpdate()
+    void FixedUpdate()
     {
         controlDepth();
     }
