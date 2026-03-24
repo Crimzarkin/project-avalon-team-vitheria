@@ -18,7 +18,7 @@ public class TutorialScript : MonoBehaviour
     void Start()
     {
 
-        tutorialScreen.SetActive(false);
+        tutorialScreen.SetActive(true);
         ButtonObject.SetActive(true);
         
     }
