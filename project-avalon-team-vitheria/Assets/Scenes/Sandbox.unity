@@ -9084,7 +9084,6 @@ GameObject:
   - component: {fileID: 584250565}
   - component: {fileID: 584250564}
   - component: {fileID: 584250570}
-  - component: {fileID: 584250571}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -9135,8 +9134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d79677709273c24ea79d5a3930632ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 1704644862}
+  shootingPoint: {fileID: 1324889185}
   inventoryClosed: 1
+  rig: {fileID: 584250563}
   blockObject: {fileID: 0}
   parent: {fileID: 0}
   highlightedColor: {r: 0.9622642, g: 0.05900679, b: 0.05900679, a: 0}
@@ -9153,6 +9153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc24d4d875e4bbe4885f28c1ece26d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
   swipeThreshold: 0.6
 --- !u!114 &584250568
 MonoBehaviour:
@@ -9202,20 +9203,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &584250571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584250563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b1ca83cae5a11547a285fbc515b2f6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  rotationSpeed: 50
 --- !u!1 &597485379
 GameObject:
   m_ObjectHideFlags: 0
