@@ -10,7 +10,8 @@ public class BuildSystem : MonoBehaviour
 {
     public Transform shootingPoint;
     public bool inventoryClosed = true;
-    
+    public GameObject rig;
+    private PlayerMovement pm;
     // Block placement
     private bool ZoneObject = false;
     private float RaycastLength = 5.0f;
@@ -36,6 +37,7 @@ public class BuildSystem : MonoBehaviour
     void Start()
     {
         controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        pm = rig.GetComponent<PlayerMovement>();
     }
 
     public void Update()
@@ -83,12 +85,18 @@ public class BuildSystem : MonoBehaviour
     {
         if (other.CompareTag("Zone"))
             ZoneObject = true;
+            pm.SetMovementSpeed(2.5f);
+
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Zone"))
             ZoneObject = false;
+            pm.SetMovementSpeed(5f);
+
+
     }
 
     void BuildBlock(GameObject block)

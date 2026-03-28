@@ -3,12 +3,11 @@ using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float moveSpeed = 5.0f;
-    float stepHeight = 1f;        // max height you can step up
-    float floatDownSpeed = 2f;    // how fast you float down
-    float groundCheckDistance = 0.1f;
+    public float moveSpeed = 5.0f;
+    private float stepHeight = 1f;        // max height you can step up
+    private float floatDownSpeed = 2f;    // how fast you float down
+    private float groundCheckDistance = 0.1f;
     private float snapTurnAngle = 15f;
-
     private float triggerHoldTime = 0f;
     private float requiredHoldTime = 0.8f;
 
@@ -117,5 +116,9 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(Vector3.up, angle);
     }
 
+    public void SetMovementSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 
 }
