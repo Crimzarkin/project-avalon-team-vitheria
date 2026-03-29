@@ -9699,7 +9699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d79677709273c24ea79d5a3930632ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 1324889185}
+  shootingPoint: {fileID: 1704644862}
   inventoryClosed: 1
   rig: {fileID: 584250563}
   blockObject: {fileID: 0}
