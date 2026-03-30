@@ -21,7 +21,7 @@ public class ExitButton : MonoBehaviour
     void Start()
     {
         ExitScreen.SetActive(true);
-        Time.timeScale = 1f; 
+ 
         Confirmation.SetActive(false); 
     }
 
@@ -29,7 +29,7 @@ public class ExitButton : MonoBehaviour
     {
         Vector3 newPos = player.position + (player.forward * TuiDistance) + (Vector3.up * TuiHeight) + (player.right * .50f); 
         ExitScreen.transform.position = newPos;
-        ExitScreen.transform.localScale = new Vector3(TuiScale * 2, TuiScale  * 2, TuiScale);
+        ExitScreen.transform.localScale = new Vector3(TuiScale * 3, TuiScale  * 3, TuiScale);
         ExitScreen.transform.rotation = player.rotation;
         ExitScreen.transform.Rotate(20, 180, 0); 
 
@@ -40,31 +40,4 @@ public class ExitButton : MonoBehaviour
         Confirmation.transform.Rotate(0, 180, 0); 
     }
 
-    public void ShowConfirmation()
-    {
-        Confirmation.SetActive(true);
-        Time.timeScale = 0f;
-        
-        if (tutorialGameObject != null)
-        {
-            tutorialGameObject.SetActive(false);
-        }
-    }
-
-    public void CancelExit()
-    {
-        Confirmation.SetActive(false);
-        Time.timeScale = 1f;
-
-        if (tutorialGameObject != null)
-        {
-            tutorialGameObject.SetActive(true);
-        }
-    }
-
-    public void ConfirmExit()
-    {
-        Time.timeScale = 1f; 
-        Application.Quit(); 
-    }
 }
