@@ -5,7 +5,7 @@ using UnityEngine;
 public class PaintCanvas : MonoBehaviour
 {
     public int textureSize = 512;
-    public int brushSize = 6;
+    public int brushSize = 4;
     public Material canvasMaterial;
 
     private Texture2D texture;
