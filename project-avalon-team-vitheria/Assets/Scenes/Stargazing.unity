@@ -11457,9 +11457,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Additionally, at the back of the map on either side, there is a wrap-around
+  m_text: "Additionally, at the back of the map on the left side there is a wrap-around
     bridge that will briefly take you outside the observatory to fully experience
-    the starry sky.
+    the starry sky. \n*Warning: The bridge may cause nausea for certain users.a"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ceb89c4f6c894ce4bae53e40debcca10, type: 2}
@@ -11487,8 +11487,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11528,12 +11528,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 2.490711, z: 7.6313744, w: -4.356312}
   m_textInfo:
     textComponent: {fileID: 1161678109}
-    characterCount: 185
+    characterCount: 229
     spriteCount: 0
-    spaceCount: 31
-    wordCount: 32
+    spaceCount: 39
+    wordCount: 40
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
