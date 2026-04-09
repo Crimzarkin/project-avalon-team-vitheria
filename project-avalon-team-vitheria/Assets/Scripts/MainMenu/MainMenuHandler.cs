@@ -23,32 +23,29 @@ public class MainMenuHandler : MonoBehaviour
         loadingCanvas = GameObject.Find("Loading").GetComponent<Canvas>();
         loadingCanvas.enabled = false;
     }
-        public void StartGame(string sceneName)
-{
-    if (sceneName == "Exit")
+        
+    public void StartGame(string sceneName)
     {
-        Application.Quit();
-        return;
+        if(sceneName == "Exit")
+        {
+            Application.Quit();
+            return;
+        }
+       
+        
+        menuCanvas.SetActive(false);
+        loadingCanvas.enabled = true;
+        StartCoroutine(AnimateLoading());
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+    IEnumerator AnimateLoading()
+    {
+        while (true)
+        {
+            loadingText.text = baseText + new string('.', dotCount);
+            dotCount = (dotCount + 1) % 4;
+            yield return new WaitForSeconds(loadingSpeed);
+        }
     }
 
-    menuCanvas.SetActive(false);
-    loadingCanvas.enabled = true;
-
-    StartCoroutine(LoadSceneRoutine(sceneName));
-}
-
-IEnumerator LoadSceneRoutine(string sceneName)
-{
-    StartCoroutine(AnimateLoading());
-    yield return Resources.UnloadUnusedAssets();
-    System.GC.Collect();
-
-    yield return null;
-
-    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-    while (!asyncLoad.isDone)
-    {
-        yield return null;
-    }
-}
 }
