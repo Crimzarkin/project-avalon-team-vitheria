@@ -8,4 +8,4 @@ Capstone project for Alberta Health Services. The goal of this project is to mak
 Syed Danial Farrukh, Ron Ivan Ibe, Altin Bakiu, Mark Guerta, Mark Jimenez, John Tumacder
 
 # Showcase
-<video src="" width="320" height="240" controls></video>
+<video src="https://github.com/user-attachments/assets/52990bc9-7468-4752-b6fd-eda6edb56795" width="320" height="240" controls></video>
